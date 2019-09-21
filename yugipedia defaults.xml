@@ -1,0 +1,4534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AutoWikiBrowserPreferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:space="preserve" Version="6.1.0.1">
+  <Project>custom</Project>
+  <LanguageCode>en</LanguageCode>
+  <CustomProject>yugipedia.com/</CustomProject>
+  <Protocol>https://</Protocol>
+  <LoginDomain />
+  <List>
+    <ListSource>Template:Unofficial lore</ListSource>
+    <SelectedProvider>CategoryListProvider</SelectedProvider>
+    <ArticleList />
+  </List>
+  <FindAndReplace>
+    <Enabled>true</Enabled>
+    <IgnoreSomeText>false</IgnoreSomeText>
+    <IgnoreMoreText>false</IgnoreMoreText>
+    <AppendSummary>false</AppendSummary>
+    <Replacements>
+      <Replacement>
+        <Find>\u034F|\u061C|\u200B|\u200C|\u200D|\u200E|\u200F|\u2028|\u2029|\u202A|\u202B|\u202C|\u202D|\u202E|\u2060|\u2061|\u2062|\u2063|\u2064|\u2066|\u2067|\u2068|\u2069|\uFEFF|\uFFF9|\uFFFA|\uFFFB|\uFFFC|\uFFFD|\uFFFE|\uFFFF</Find>
+        <Replace />
+        <Comment>Unicode control characters</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find> |\t|\v|\f|\u00A0|\u2000|\u2001|\u2002|\u2003|\u2004|\u2005|\u2006|\u2007|\u2008|\u2009|\u200A|\u202F|\u205F</Find>
+        <Replace> </Replace>
+        <Comment>replace tabs et al with regular spaces</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\n{3,}</Find>
+        <Replace>\n\n</Replace>
+        <Comment>collapse 3+ newlines to 2</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[( *)([^|\]]*)( *)]]</Find>
+        <Replace>$1[[$2]]$3</Replace>
+        <Comment>rm unnecessary whitespace in link markup: unpiped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[ *([^|\]]*) *\|( *)([^\]]*)( *)]]</Find>
+        <Replace>$2[[$1|$3]]$4</Replace>
+        <Comment>rm unnecessary whitespace in link markup: piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find> {2,}(?![ =|])</Find>
+        <Replace> </Replace>
+        <Comment>collapse spaces (except in template parameters or gallery entries)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\&lt;[ /\\]*br[ /\\]*\&gt;</Find>
+        <Replace>&lt;br&gt;</Replace>
+        <Comment>&lt;br /&gt; cleanup</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;!\})\}\} *\{\{(?!Ruby|\{)</Find>
+        <Replace>}}\n{{</Replace>
+        <Comment>start templates on a new line, except for {{Ruby}}</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>^ *|(?&lt;![=|]) *$</Find>
+        <Replace />
+        <Comment>rm leading/trailing whitespace (except after equals signs or single pipes)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase Multiline</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>^\|([^\{\n]*)\}\}$</Find>
+        <Replace>|$1\n}}</Replace>
+        <Comment>move closing }} in multiline templates to a separate line</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase Multiline</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(\: ?)?Image ?\: ?</Find>
+        <Replace>[[$1File:</Replace>
+        <Comment>Image: --&gt; File:</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Category:([^|]*)\|(?:\{\{PAGENAME\}\}|%%PAGENAME%%)\]\]</Find>
+        <Replace>[[Category:$1]]</Replace>
+        <Comment>rm unnecessary sortkey from categories</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(?:\: ?)(?!File\:|Category\:)</Find>
+        <Replace>[[</Replace>
+        <Comment>rm unnecessary leading : from link markup</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>^\|([^=\n]*)= *=</Find>
+        <Replace>|$1 =</Replace>
+        <Comment>fix double equals signs on parameters (sometimes, at least)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase Multiline</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;!\})(?:\&lt;br\&gt;)?\n+(?![{}|']|\n)</Find>
+        <Replace>&lt;br /&gt;</Replace>
+        <Comment>change newlines that aren't empty and don't start a new template call or parameter to &lt;br /&gt;</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>= \&lt;br\&gt;(?!\&lt;br\&gt;)</Find>
+        <Replace>= </Replace>
+        <Comment>remove &lt;br /&gt; at the beginning of parameters (can sometimes happen when the above rule fires)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>^\| *([^ =]*)( +)= *</Find>
+        <Replace>| $1$2= </Replace>
+        <Comment>standard spacing on parameters</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase Multiline</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>^\| *(.+?) *= *</Find>
+        <Replace>| $1 = </Replace>
+        <Comment>standard spacing on CardTable2 params</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase Multiline</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\| name *= ?\n</Find>
+        <Replace />
+        <Comment>rm empty "name" parameters</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\|width( *)= ([^\n]*)(?:px)?\n</Find>
+        <Replace>|width$1= $2\n</Replace>
+        <Comment>remove unneeded "px" from widths</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\n\| width += \d\d\d?</Find>
+        <Replace />
+        <Comment>remove unneeded |widths</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\|\n</Find>
+        <Replace>\n</Replace>
+        <Comment>rm orphaned pipes</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>^([!|])\|</Find>
+        <Replace>$1</Replace>
+        <Comment>fix gallery markup</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase Multiline</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;!(\u201E|fr_).*?)(?:\u201C|\u201F)(?![ \n])</Find>
+        <Replace>"</Replace>
+        <Comment>fancy double-quote cleanup: opening</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;!fr_.*?)\u201D</Find>
+        <Replace>"</Replace>
+        <Comment>fancy double-quote cleanup: closing</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;!fr_.*?)(?:\u2018|\u2019)</Find>
+        <Replace>'</Replace>
+        <Comment>fancy single-quote cleanup</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>''''s\ </Find>
+        <Replace>'''{{'}}s </Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;!(?:NO|FORCE)?TOC|(?:NO)?(?:NEWSECTIONLINK|INDEX)|HIDDENCAT|NO(?:EDITSECTION|GALLERY|CONTENTCONVERT|CC|TITLECONVERT|TC)|STATICREDIRECT|DISAMBIG|EXPECTUNUSEDCATEGORY)_+(?!(?:NO|FORCE)?TOC|(?:NO)?(?:NEWSECTIONLINK|INDEX)|HIDDENCAT|NO(?:EDITSECTION|GALLERY|CONTENTCONVERT|CC|TITLECONVERT|TC)|STATICREDIRECT|DISAMBIG|EXPECTUNUSEDCATEGORY)</Find>
+        <Replace>_</Replace>
+        <Comment>collapse underscores except in __TOC__ &amp;co.</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>&lt;sup[^&gt;]*&gt;#&lt;\/sup&gt;</Find>
+        <Replace>#</Replace>
+        <Comment>remove superscript on octothorpes</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>&lt;/?ruby&gt;</Find>
+        <Replace />
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>&lt;rb&gt;(.*?)&lt;/rb&gt;</Find>
+        <Replace>{{Ruby|$1</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>&lt;rt&gt;(.*?)&lt;/rt&gt;</Find>
+        <Replace>|$1}}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>&lt;rp&gt;.*?&lt;/rp&gt;</Find>
+        <Replace />
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[+https?\:\/\/en\.wikipedia\.org\/?(?:wiki)?\/?(.*?)[ |]+(.*?)]+</Find>
+        <Replace>[[wikipedia:$1|$2]]</Replace>
+        <Comment>interwiki link syntax on WP links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[+http\:\/\/(?:www\.)?bulbapedia\.bulbagarden\.net\/?(?:wiki)?\/?(.*?)[ |]+(.*?)]+</Find>
+        <Replace>[[bulbapedia:$1|$2]]</Replace>
+        <Comment>interwiki link syntax on Bulbapedia links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[+http\:\/\/(?:www\.)?bulbapedia\.bulbagarden\.net\/?[ |]+(.*?)]+</Find>
+        <Replace>[[bulbapedia:|$1]]</Replace>
+        <Comment>interwiki link syntax on Bulbapedia links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[a([^|\]]*)\|</Find>
+        <Replace>[[A$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[b([^|\]]*)\|</Find>
+        <Replace>[[B$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[c([^|\]]*)\|</Find>
+        <Replace>[[C$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[d([^|\]]*)\|</Find>
+        <Replace>[[D$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[e([^|\]]*)\|</Find>
+        <Replace>[[E$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[f([^|\]]*)\|</Find>
+        <Replace>[[F$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[g([^|\]]*)\|</Find>
+        <Replace>[[G$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[h([^|\]]*)\|</Find>
+        <Replace>[[H$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[i([^|\]]*)\|</Find>
+        <Replace>[[I$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[j([^|\]]*)\|</Find>
+        <Replace>[[J$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[k([^|\]]*)\|</Find>
+        <Replace>[[K$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[l([^|\]]*)\|</Find>
+        <Replace>[[L$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[m([^|\]]*)\|</Find>
+        <Replace>[[M$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[n([^|\]]*)\|</Find>
+        <Replace>[[N$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[o([^|\]]*)\|</Find>
+        <Replace>[[O$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[p([^|\]]*)\|</Find>
+        <Replace>[[P$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[q([^|\]]*)\|</Find>
+        <Replace>[[Q$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[r([^|\]]*)\|</Find>
+        <Replace>[[R$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[s([^|\]]*)\|</Find>
+        <Replace>[[S$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[t([^|\]]*)\|</Find>
+        <Replace>[[T$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[u([^|\]]*)\|</Find>
+        <Replace>[[U$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[v([^|\]]*)\|</Find>
+        <Replace>[[V$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[w([^|\]]*)\|</Find>
+        <Replace>[[W$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[x([^|\]]*)\|</Find>
+        <Replace>[[X$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[y([^|\]]*)\|</Find>
+        <Replace>[[Y$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[z([^|\]]*)\|</Find>
+        <Replace>[[Z$1|</Replace>
+        <Comment>uppercase first letter of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[C(alling|ular)\|</Find>
+        <Replace>[[c$1|</Replace>
+        <Comment>re-lowercase piped links to "calling" and "cular"</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[G(lory|o forward)\|</Find>
+        <Replace>[[g$1|</Replace>
+        <Comment>re-lowercase piped links to "glory" and "go forward"</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Hunder\|</Find>
+        <Replace>[[hunder|</Replace>
+        <Comment>re-lowercase piped links to "hunder"</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Itsu\|</Find>
+        <Replace>[[itsu|</Replace>
+        <Comment>re-lowercase piped links to "itsu"</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Lswarm\|</Find>
+        <Replace>[[lswarm|</Replace>
+        <Comment>re-lowercase piped links to "lswarm"</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Makemagic( \(CD\))?\|</Find>
+        <Replace>[[makemagic$1|</Replace>
+        <Comment>re-lowercase piped links to "makemagic" and "makemagic (CD)"</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Roid\|</Find>
+        <Replace>[[roid|</Replace>
+        <Comment>re-lowercase piped links to "roid"</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[S(phinx|prout)\|</Find>
+        <Replace>[[s$1|</Replace>
+        <Comment>re-lowercase piped links to "sphinx" and "sprout"</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[With (Chain|Eyes of Blue)\|</Find>
+        <Replace>[[with $1|</Replace>
+        <Comment>re-lowercase piped links to "with Chain" and "with Eyes of Blue"</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Normal|(?:Flip )?Effect|Fusion(?: Substitute)?|Ritual|(?:Dark )?Synchro|Xyz|Pendulum|Toon|Spirit|Union|Gemini|(?:Dark )?Tuner) Monster(?: Card)?s\|</Find>
+        <Replace>[[$1 Monster|</Replace>
+        <Comment>[[* Monster( Cards)|*]] --&gt; [[* Monster|*]]</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Normal|(?:Flip )?Effect|Fusion(?: Substitute)?|Ritual|(?:Dark )?Synchro|Xyz|Pendulum|Toon|Spirit|Union|Gemini|(?:Dark )?Tuner) Monster(?: Card)?s]]</Find>
+        <Replace>[[$1 Monster]]s</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Normal|(?:Flip )?Effect|Fusion(?: Substitute)?|Ritual|(?:Dark )?Synchro|Xyz|Pendulum|Toon|Spirit|Union|Gemini|(?:Dark )?Tuner) Monster Card]]</Find>
+        <Replace>[[$1 Monster|$1]] [[Monster Card]]</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Fusion|Synchro|Xyz) Material Monster(?: Card)?(s)?]]</Find>
+        <Replace>[[$1 Material|$1 Material Monster$2]]</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Fusion|Synchro|Xyz) Material Monster(?: Card)?s?\|\1 Material(?: Monster)?(?: Card)?([^\]]*)]]</Find>
+        <Replace>[[$1 Material|$1 Material Monster$2]]</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Fusion|Synchro|Xyz) Material Monster(?: Card)?s?\|</Find>
+        <Replace>[[$1 Material|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Monster\ Cards\|</Find>
+        <Replace>[[Monster Card|</Replace>
+        <Comment>[[Monster Cards|*]] --&gt; [[Monster Card|*]]</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Normal|Continuous|Field|Equip|Quick\-Play|Ritual|Counter) (Spell|Trap|Equip)(?: Card)?s\|</Find>
+        <Replace>[[$1 $2 Card|</Replace>
+        <Comment>[[* *(s| Cards)|*]] --&gt; [[* * Card|*]]</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Monster|Spell|Trap|Equip|Trap\-Spell|Virus) Card(s)(\|.*?)?]]</Find>
+        <Replace>[[$1 Card$3]]$2</Replace>
+        <Comment>[[* Cards|*]] --&gt; [[* Card|*]]</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Normal|Continuous|Field|Equip|Quick\-Play|Ritual|Counter)? ?(Monster|Spell|Trap|Equip|Trap\-Spell|Virus)(?: Card)?s\|</Find>
+        <Replace>[[$1 $2 Card|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Normal|Continuous|Field|Equip|Quick\-Play|Ritual|Counter)? ?(Monster|Spell|Trap|Equip|Trap\-Spell|Virus)(?: Card)?s]]</Find>
+        <Replace>[[$1 $2 Card]]s</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[A(?:ctiv(?:a(?:ble|ción|t(?:ed|i(?:ng|on)))|er|és)|ktivier(?:en|t)|ttavate)\|</Find>
+        <Replace>[[Activate|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Activate\|(A)ctivati(on|ng)]]</Find>
+        <Replace>[[$1ctivati$2]]</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(A)ctivate([ds])]]</Find>
+        <Replace>[[$1ctivate]]$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Attack|Cost|Destroy|Hand|Summon)(?:ing|ed|s)\|</Find>
+        <Replace>[[$1|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Attack|Cost|Destroy|Hand|Summon)(ing|ed|s)]]</Find>
+        <Replace>[[$1]]$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(C)ontrol(e[dr]|ing)</Find>
+        <Replace>$1ontroll$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(C)ontrolls</Find>
+        <Replace>$1ontrols</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(?:Contr(?:ol(?:le[dr]|s)|ôl(?:e[rz]|és)|Kontrollier(?:en|s?t))\|</Find>
+        <Replace>[[Control|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(C)ontrol(le[dr]|s)]]</Find>
+        <Replace>[[$1ontrol]]$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(C)ontrol]](e[dr])</Find>
+        <Replace>[[$1ontrol]]l$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(C)ontrol]]ls</Find>
+        <Replace>[[$1ontrol]]s</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Draw(?:ing)? a Card\|</Find>
+        <Replace>[[Draw a card|</Replace>
+        <Comment>[[Draw(ing) a Card| --&gt; [[Draw a card|</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(?:Card(?:'s)? effects?|Ef(?:ecto|fe[ck]?ts?)|Special Ability)\|</Find>
+        <Replace>[[Effect|</Replace>
+        <Comment>[[Card effect(s)| --&gt; [[Effect|</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(C)ard (e)ffect(s)?]]</Find>
+        <Replace>$1ard [[$2ffect]]$3</Replace>
+        <Comment>[[Card effect(s)]] --&gt; [[Effect]](s)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Effect\ Damage\|</Find>
+        <Replace>[[Effect damage|</Replace>
+        <Comment>[[Effect Damage| --&gt; [[Effect damage|</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(E)quipp?(ed|ing)</Find>
+        <Replace>$1quipp$2</Replace>
+        <Comment>equipped/equipping spellcheck</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(E)quipps</Find>
+        <Replace>$1quips</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Equipp(?:ed|ing)\|</Find>
+        <Replace>[[Equip|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(E)quipp(ed|ing)]]</Find>
+        <Replace>[[$1quip]]p$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(E)quip]](ed|ing)</Find>
+        <Replace>[[$1quip]]p$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(E)quip]]ps</Find>
+        <Replace>[[$1quip]]s</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Playing\ field\|</Find>
+        <Replace>[[Field|</Replace>
+        <Comment>[[Playing field| --&gt; [[Field|</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(F)lip(ed|ing)</Find>
+        <Replace>$1lipp$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(F)lipps</Find>
+        <Replace>$1lips</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(?:Flip(?:ped|s)?|Volte[ao])\|</Find>
+        <Replace>[[Flip|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(F)lip(ped|s)]]</Find>
+        <Replace>[[$1lip]]$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(F)lip]](ed|ing)</Find>
+        <Replace>[[$1lip]]p$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(F)lip]]ps</Find>
+        <Replace>[[$1lip]]$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(?:Grave(?:yard(?: Zone)?)?|GY|Ceme(?:t[ae]ry|nterio|Cim(?:etière|itero)|Friedhof)\|</Find>
+        <Replace>[[Graveyard|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Graveyard\|GY]]</Find>
+        <Replace>[[GY]]</Replace>
+        <Comment>[[Graveyard|GY]] --&gt; [[GY]]</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(?:Remove[ds]? from|Le(?:av(?:es?|ing)|ft)) the field\|</Find>
+        <Replace>[[Leaves the field|</Replace>
+        <Comment>[[(Remove(d|s) from|Leav(e(s)|ing)|Left) the field| --&gt; [[Leaves the field|</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Life ?Points?(?: Loss)?\|</Find>
+        <Replace>[[LP|</Replace>
+        <Comment>[[Life Points| --&gt; [[LP|</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[LP\|LP]]</Find>
+        <Replace>[[LP]]</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[LP\|Life\ Points]]</Find>
+        <Replace>[[Life Points]]</Replace>
+        <Comment>[[LP|Life Points]] --&gt; [[Life Points]]</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Token(?: Monster)?(?: Card)?s?\|</Find>
+        <Replace>[[Monster Token|</Replace>
+        <Comment>[[Token Monster( Card)(s)| --&gt; [[Monster Token|</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Monster Token\|Monster Token(s)?]]</Find>
+        <Replace>[[Monster Token]]$1</Replace>
+        <Comment>[[Token Monster( Card)(s)|Monster Token(s)]] --&gt; [[Monster Token]](s)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Token(?: Monster)?(?: Card)?s?)]]</Find>
+        <Replace>[[Monster Token|$1]]</Replace>
+        <Comment>[[Token Monster( Card)(s)]] --&gt; [[Monster Token]](s)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Normal\ Summon]]/\[\[Set]]</Find>
+        <Replace>[[Normal Summon]]/[[Normal Set|Set]]</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(O)nce per \[\[turn]]</Find>
+        <Replace>[[$1nce per turn]]</Replace>
+        <Comment>Once per [[turn]] --&gt; [[Once per turn]]</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Possess(?:e[ds]|i(?:ng|on))\|</Find>
+        <Replace>[[Possess|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(P)ossess(e[ds]|i(?:ng|on))]]</Find>
+        <Replace>[[$1ossess]]$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(?:Sen(?:ds?|t)|Envoyez|Lege|Manda(?:la|r))\|</Find>
+        <Replace>[[Send|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Send\|(S)ent]]</Find>
+        <Replace>[[$1ent]]</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(S)ends]]</Find>
+        <Replace>[[$1end]]s</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Standby\ Phases\|</Find>
+        <Replace>[[Standby Phase|</Replace>
+        <Comment>[[Standby Phases| --&gt; [[Standby Phase|</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(?:Tribut(?:e[ds]?i(?:ng)?)|Sacrific(?:ar|e)|Release)\|</Find>
+        <Replace>[[Tribute|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Tribute\|(T)ributing]]</Find>
+        <Replace>[[$1ributing]]</Replace>
+        <Comment>[[Tribute|Tributing]] --&gt; [[Tributing]]</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(T)ribute([ds])]]</Find>
+        <Replace>[[$1ribute]]$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Monsters?)]]</Find>
+        <Replace>[[Monster Card|$1]]</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Spells?)]]</Find>
+        <Replace>[[Spell Card|$1]]</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(Traps?)]]</Find>
+        <Replace>[[Trap Card|$1]]</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Monsters?\|</Find>
+        <Replace>[[Monster Card|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Spells?\|</Find>
+        <Replace>[[Spell Card|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Traps?\|</Find>
+        <Replace>[[Trap Card|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Tuner\|</Find>
+        <Replace>[[Tuner Monster|</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\|(.*?)\(s\)]]</Find>
+        <Replace>|$1]](s)</Replace>
+        <Comment>move "(s)" out of link markup of piped links</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[([^|\]]*)\|(\1)([^ \]]*)?]]</Find>
+        <Replace>[[$2]]$3</Replace>
+        <Comment>link simplification</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[([^|\]]*)(\|[^\]]*)?\]\](.*?)\[\[(\1)\]\]</Find>
+        <Replace>[[$1$2]]$3$4</Replace>
+        <Comment>delink duplicates of the same link in the same line: duplicate is unpiped</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase Multiline</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[([^|\]]*)(\|[^\]]*)?\]\](.*?)\[\[\1\|([^\]]*)\]\]</Find>
+        <Replace>[[$1$2]]$3$4</Replace>
+        <Comment>delink duplicates of the same link in the same line: duplicate is piped</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase Multiline</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>#redirect\s*</Find>
+        <Replace>#REDIRECT </Replace>
+        <Comment>normalize #REDIRECT formatting</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\| (..)_(nam|lor)e *</Find>
+        <Replace>| $1_$2e               </Replace>
+        <Comment>fix alignment in *_name/*_lore parameters</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\| (?:dm\d|[de]ds|tsc|sdd|[dr]od|gx0?5|pc[jky])_?(?:number\d?|(?:nam|lor)e|d[cp]|align(?:ment)?|atk|def|status|card) +=.*?\n</Find>
+        <Replace />
+        <Comment>rm misc vg params</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\| (?:dm\d|[de]ds|tsc|sdd|[dr]od|gx0?5|pc[jky])_?sets? +=.*?\n(\||\}\})</Find>
+        <Replace>$1</Replace>
+        <Comment>rm vg sets params</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase Singleline</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>&lt;br&gt;</Find>
+        <Replace>&lt;br /&gt;</Replace>
+        <Comment>&lt;br /&gt; cleanup 2</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+    </Replacements>
+    <AdvancedReps>
+      <IRule xsi:type="TemplateParamRule">
+        <enabled_>true</enabled_>
+        <Children>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>sqname</Name>
+                <ParamName>sqname</ParamName>
+                <NewParamName>sq_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>sqlore</Name>
+                <ParamName>sqlore</ParamName>
+                <NewParamName>sq_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Albanian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>arname</Name>
+                <ParamName>arname</ParamName>
+                <NewParamName>ar_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>arlore</Name>
+                <ParamName>arlore</ParamName>
+                <NewParamName>ar_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Arabic</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>aename</Name>
+                <ParamName>aename</ParamName>
+                <NewParamName>ae_name</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Asian-English</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>bnname</Name>
+                <ParamName>bnname</ParamName>
+                <NewParamName>bn_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>bnlore</Name>
+                <ParamName>bnlore</ParamName>
+                <NewParamName>bn_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Bengali</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>bgname</Name>
+                <ParamName>bgname</ParamName>
+                <NewParamName>bg_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>bglore</Name>
+                <ParamName>bglore</ParamName>
+                <NewParamName>bg_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Bulgarian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>chname</Name>
+                <ParamName>chname</ParamName>
+                <NewParamName>zh_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>ch_name</Name>
+                <ParamName>ch_name</ParamName>
+                <NewParamName>zh_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>zhname</Name>
+                <ParamName>zhname</ParamName>
+                <NewParamName>zh_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>chlore</Name>
+                <ParamName>chlore</ParamName>
+                <NewParamName>zh_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>ch_lore</Name>
+                <ParamName>ch_lore</ParamName>
+                <NewParamName>zh_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>zhlore</Name>
+                <ParamName>zhlore</ParamName>
+                <NewParamName>zh_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>ch_sets</Name>
+                <ParamName>ch_sets</ParamName>
+                <NewParamName>tc_sets</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>zh_sets</Name>
+                <ParamName>zh_sets</ParamName>
+                <NewParamName>tc_sets</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Chinese</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>crname</Name>
+                <ParamName>crname</ParamName>
+                <NewParamName>hr_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>cr_name</Name>
+                <ParamName>cr_name</ParamName>
+                <NewParamName>hr_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>hrname</Name>
+                <ParamName>hrname</ParamName>
+                <NewParamName>hr_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>crlore</Name>
+                <ParamName>crlore</ParamName>
+                <NewParamName>hr_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>cr_lore</Name>
+                <ParamName>cr_lore</ParamName>
+                <NewParamName>hr_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>hrlore</Name>
+                <ParamName>hrlore</ParamName>
+                <NewParamName>hr_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Croatian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>csname</Name>
+                <ParamName>csname</ParamName>
+                <NewParamName>cs_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>cslore</Name>
+                <ParamName>cslore</ParamName>
+                <NewParamName>cs_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Czech</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>daname</Name>
+                <ParamName>daname</ParamName>
+                <NewParamName>da_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>dalore</Name>
+                <ParamName>dalore</ParamName>
+                <NewParamName>da_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Danish</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>nlname</Name>
+                <ParamName>nlname</ParamName>
+                <NewParamName>nl_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>nllore</Name>
+                <ParamName>nllore</ParamName>
+                <NewParamName>nl_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Dutch</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>etname</Name>
+                <ParamName>etname</ParamName>
+                <NewParamName>et_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>etlore</Name>
+                <ParamName>etlore</ParamName>
+                <NewParamName>et_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Estonian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>filname</Name>
+                <ParamName>filname</ParamName>
+                <NewParamName>fil_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>fillore</Name>
+                <ParamName>fillore</ParamName>
+                <NewParamName>fil_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Filipino</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>finame</Name>
+                <ParamName>finame</ParamName>
+                <NewParamName>fi_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>filore</Name>
+                <ParamName>filore</ParamName>
+                <NewParamName>fi_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Finnish</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>frname</Name>
+                <ParamName>frname</ParamName>
+                <NewParamName>fr_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>frlore</Name>
+                <ParamName>frlore</ParamName>
+                <NewParamName>fr_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>French</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>dename</Name>
+                <ParamName>dename</ParamName>
+                <NewParamName>de_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>delore</Name>
+                <ParamName>delore</ParamName>
+                <NewParamName>de_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>German</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>grname</Name>
+                <ParamName>grname</ParamName>
+                <NewParamName>el_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>gr_name</Name>
+                <ParamName>gr_name</ParamName>
+                <NewParamName>el_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>elname</Name>
+                <ParamName>elname</ParamName>
+                <NewParamName>el_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>grlore</Name>
+                <ParamName>grlore</ParamName>
+                <NewParamName>el_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>gr_lore</Name>
+                <ParamName>gr_lore</ParamName>
+                <NewParamName>el_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>ellore</Name>
+                <ParamName>ellore</ParamName>
+                <NewParamName>el_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Greek</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>hawname</Name>
+                <ParamName>hawname</ParamName>
+                <NewParamName>haw_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>hawlore</Name>
+                <ParamName>hawlore</ParamName>
+                <NewParamName>haw_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Hawaiian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>hename</Name>
+                <ParamName>hename</ParamName>
+                <NewParamName>he_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>helore</Name>
+                <ParamName>helore</ParamName>
+                <NewParamName>he_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Hebrew</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>hiname</Name>
+                <ParamName>hiname</ParamName>
+                <NewParamName>hi_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>hilore</Name>
+                <ParamName>hilore</ParamName>
+                <NewParamName>hi_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Hindi</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>huname</Name>
+                <ParamName>huname</ParamName>
+                <NewParamName>hu_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>hulore</Name>
+                <ParamName>hulore</ParamName>
+                <NewParamName>hu_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>hnname</Name>
+                <ParamName>hnname</ParamName>
+                <NewParamName>hu_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>hnlore</Name>
+                <ParamName>hnlore</ParamName>
+                <NewParamName>hu_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>hn_name</Name>
+                <ParamName>hn_name</ParamName>
+                <NewParamName>hu_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>hn_lore</Name>
+                <ParamName>hn_lore</ParamName>
+                <NewParamName>hu_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Hungarian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>idname</Name>
+                <ParamName>idname</ParamName>
+                <NewParamName>id_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>idlore</Name>
+                <ParamName>idlore</ParamName>
+                <NewParamName>id_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Indonesian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>ganame</Name>
+                <ParamName>ganame</ParamName>
+                <NewParamName>ga_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>galore</Name>
+                <ParamName>galore</ParamName>
+                <NewParamName>ga_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Irish</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>itname</Name>
+                <ParamName>itname</ParamName>
+                <NewParamName>it_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>itlore</Name>
+                <ParamName>itlore</ParamName>
+                <NewParamName>it_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Italian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>phon</Name>
+                <ParamName>phon</ParamName>
+                <NewParamName>romaji_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>ja_romaji</Name>
+                <ParamName>ja_romaji</ParamName>
+                <NewParamName>romaji_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>false</enabled_>
+                <Children />
+                <Name>trans</Name>
+                <ParamName>trans</ParamName>
+                <NewParamName>trans_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>ja_trans</Name>
+                <ParamName>ja_trans</ParamName>
+                <NewParamName>trans_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>jplore</Name>
+                <ParamName>jplore</ParamName>
+                <NewParamName>ja_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>jp_lore</Name>
+                <ParamName>jp_lore</ParamName>
+                <NewParamName>ja_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>jalore</Name>
+                <ParamName>jalore</ParamName>
+                <NewParamName>ja_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Japanese</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>krname</Name>
+                <ParamName>krname</ParamName>
+                <NewParamName>ko_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>kr_name</Name>
+                <ParamName>kr_name</ParamName>
+                <NewParamName>ko_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>koname</Name>
+                <ParamName>koname</ParamName>
+                <NewParamName>ko_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>krlore</Name>
+                <ParamName>krlore</ParamName>
+                <NewParamName>ko_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>kr_lore</Name>
+                <ParamName>kr_lore</ParamName>
+                <NewParamName>ko_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>kolore</Name>
+                <ParamName>kolore</ParamName>
+                <NewParamName>ko_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Korean</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>lvname</Name>
+                <ParamName>lvname</ParamName>
+                <NewParamName>lv_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>lvlore</Name>
+                <ParamName>lvlore</ParamName>
+                <NewParamName>lv_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Latvian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>ltname</Name>
+                <ParamName>ltname</ParamName>
+                <NewParamName>lt_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>ltlore</Name>
+                <ParamName>ltlore</ParamName>
+                <NewParamName>lt_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Lithuanian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>noname</Name>
+                <ParamName>noname</ParamName>
+                <NewParamName>no_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>nolore</Name>
+                <ParamName>nolore</ParamName>
+                <NewParamName>no_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children>
+                  <IRule xsi:type="TemplateParamRule">
+                    <enabled_>true</enabled_>
+                    <Children />
+                    <Name>nbname</Name>
+                    <ParamName>nbname</ParamName>
+                    <NewParamName>nb_name</NewParamName>
+                  </IRule>
+                  <IRule xsi:type="TemplateParamRule">
+                    <enabled_>true</enabled_>
+                    <Children />
+                    <Name>nblore</Name>
+                    <ParamName>nblore</ParamName>
+                    <NewParamName>nb_lore</NewParamName>
+                  </IRule>
+                </Children>
+                <Name>Bokmål</Name>
+                <ParamName />
+                <NewParamName />
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children>
+                  <IRule xsi:type="TemplateParamRule">
+                    <enabled_>true</enabled_>
+                    <Children />
+                    <Name>nnname</Name>
+                    <ParamName>nnname</ParamName>
+                    <NewParamName>nn_name</NewParamName>
+                  </IRule>
+                  <IRule xsi:type="TemplateParamRule">
+                    <enabled_>true</enabled_>
+                    <Children />
+                    <Name>nnlore</Name>
+                    <ParamName>nnlore</ParamName>
+                    <NewParamName>nn_lore</NewParamName>
+                  </IRule>
+                </Children>
+                <Name>Nynorsk</Name>
+                <ParamName />
+                <NewParamName />
+              </IRule>
+            </Children>
+            <Name>Norwegian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>faname</Name>
+                <ParamName>faname</ParamName>
+                <NewParamName>fa_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>falore</Name>
+                <ParamName>falore</ParamName>
+                <NewParamName>fa_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Persian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>plname</Name>
+                <ParamName>plname</ParamName>
+                <NewParamName>pl_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>pllore</Name>
+                <ParamName>pllore</ParamName>
+                <NewParamName>pl_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Polish</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>ptname</Name>
+                <ParamName>ptname</ParamName>
+                <NewParamName>pt_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>ptlore</Name>
+                <ParamName>ptlore</ParamName>
+                <NewParamName>pt_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Portuguese</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>roname</Name>
+                <ParamName>roname</ParamName>
+                <NewParamName>ro_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>rolore</Name>
+                <ParamName>rolore</ParamName>
+                <NewParamName>ro_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Romanian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>runame</Name>
+                <ParamName>runame</ParamName>
+                <NewParamName>ru_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>rulore</Name>
+                <ParamName>rulore</ParamName>
+                <NewParamName>ru_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Russian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>srname</Name>
+                <ParamName>srname</ParamName>
+                <NewParamName>sr_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>srlore</Name>
+                <ParamName>srlore</ParamName>
+                <NewParamName>sr_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>sbname</Name>
+                <ParamName>sbname</ParamName>
+                <NewParamName>sr_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>sblore</Name>
+                <ParamName>sblore</ParamName>
+                <NewParamName>sr_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>sb_name</Name>
+                <ParamName>sb_name</ParamName>
+                <NewParamName>sr_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>sb_lore</Name>
+                <ParamName>sb_lore</ParamName>
+                <NewParamName>sr_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Serbian</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>skname</Name>
+                <ParamName>skname</ParamName>
+                <NewParamName>sk_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>sklore</Name>
+                <ParamName>sklore</ParamName>
+                <NewParamName>sk_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Slovak</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>slname</Name>
+                <ParamName>slname</ParamName>
+                <NewParamName>sl_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>sllore</Name>
+                <ParamName>sllore</ParamName>
+                <NewParamName>sl_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Slovene</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>spname</Name>
+                <ParamName>spname</ParamName>
+                <NewParamName>es_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>sp_name</Name>
+                <ParamName>sp_name</ParamName>
+                <NewParamName>es_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>esname</Name>
+                <ParamName>esname</ParamName>
+                <NewParamName>es_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>splore</Name>
+                <ParamName>splore</ParamName>
+                <NewParamName>es_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>sp_lore</Name>
+                <ParamName>sp_lore</ParamName>
+                <NewParamName>es_lore</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>eslore</Name>
+                <ParamName>eslore</ParamName>
+                <NewParamName>es_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Spanish</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>svname</Name>
+                <ParamName>svname</ParamName>
+                <NewParamName>sv_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>svlore</Name>
+                <ParamName>svlore</ParamName>
+                <NewParamName>sv_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Swedish</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>tlname</Name>
+                <ParamName>tlname</ParamName>
+                <NewParamName>tl_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>tllore</Name>
+                <ParamName>tllore</ParamName>
+                <NewParamName>tl_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Tagalog</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>thname</Name>
+                <ParamName>thname</ParamName>
+                <NewParamName>th_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>thlore</Name>
+                <ParamName>thlore</ParamName>
+                <NewParamName>th_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Thai</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>trname</Name>
+                <ParamName>trname</ParamName>
+                <NewParamName>tr_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>trlore</Name>
+                <ParamName>trlore</ParamName>
+                <NewParamName>tr_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Turkish</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>viname</Name>
+                <ParamName>viname</ParamName>
+                <NewParamName>vi_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>vilore</Name>
+                <ParamName>vilore</ParamName>
+                <NewParamName>vi_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Vietnamese</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>cyname</Name>
+                <ParamName>cyname</ParamName>
+                <NewParamName>cy_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>cylore</Name>
+                <ParamName>cylore</ParamName>
+                <NewParamName>cy_lore</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Welsh</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>animename</Name>
+                <ParamName>animename</ParamName>
+                <NewParamName>anime_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>animename2</Name>
+                <ParamName>animename2</ParamName>
+                <NewParamName>anime_name2</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Anime</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>altname</Name>
+                <ParamName>altname</ParamName>
+                <NewParamName>alt_name</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>altname2</Name>
+                <ParamName>altname2</ParamName>
+                <NewParamName>alt_name2</NewParamName>
+              </IRule>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>altname3</Name>
+                <ParamName>altname3</ParamName>
+                <NewParamName>alt_name3</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Alternate names</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="TemplateParamRule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>tf05_set</Name>
+                <ParamName>tf05_set</ParamName>
+                <NewParamName>tf05_sets</NewParamName>
+              </IRule>
+            </Children>
+            <Name>Misc</Name>
+            <ParamName />
+            <NewParamName />
+          </IRule>
+          <IRule xsi:type="TemplateParamRule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>password</Name>
+            <ParamName>passcode</ParamName>
+            <NewParamName>password</NewParamName>
+          </IRule>
+        </Children>
+        <Name>CardTable2</Name>
+        <ParamName />
+        <NewParamName />
+      </IRule>
+      <IRule xsi:type="Rule">
+        <enabled_>true</enabled_>
+        <Children />
+        <Name>underscores to spaces in link markup</Name>
+        <ruletype_>OnWholePage</ruletype_>
+        <replace_>\[\[([^|\[\]]*?)_</replace_>
+        <with_>[[$1 </with_>
+        <ifContains_ />
+        <ifNotContains_ />
+        <regex_>true</regex_>
+        <ifIsRegex_>false</ifIsRegex_>
+        <numoftimes_>100</numoftimes_>
+        <ifRegexOptions_>None</ifRegexOptions_>
+        <regexOptions_>IgnoreCase</regexOptions_>
+      </IRule>
+      <IRule xsi:type="Rule">
+        <enabled_>true</enabled_>
+        <Children />
+        <Name>PGL2 UE removal</Name>
+        <ruletype_>OnWholePage</ruletype_>
+        <replace_>.*?PGL2.*?Unlimited Edition.*?\n</replace_>
+        <with_ />
+        <ifContains_ />
+        <ifNotContains_ />
+        <regex_>true</regex_>
+        <ifIsRegex_>false</ifIsRegex_>
+        <numoftimes_>25</numoftimes_>
+        <ifRegexOptions_>None</ifRegexOptions_>
+        <regexOptions_>None</regexOptions_>
+      </IRule>
+    </AdvancedReps>
+    <SubstTemplates />
+    <IncludeComments>false</IncludeComments>
+    <ExpandRecursively>false</ExpandRecursively>
+    <IgnoreUnformatted>false</IgnoreUnformatted>
+  </FindAndReplace>
+  <Editprefs>
+    <GeneralFixes>true</GeneralFixes>
+    <Tagger>false</Tagger>
+    <Unicodify>true</Unicodify>
+    <Recategorisation>0</Recategorisation>
+    <NewCategory />
+    <NewCategory2 />
+    <ReImage>0</ReImage>
+    <ImageFind />
+    <Replace />
+    <SkipIfNoCatChange>false</SkipIfNoCatChange>
+    <RemoveSortKey>false</RemoveSortKey>
+    <SkipIfNoImgChange>false</SkipIfNoImgChange>
+    <AppendText>false</AppendText>
+    <AppendTextMetaDataSort>false</AppendTextMetaDataSort>
+    <Append>true</Append>
+    <Text />
+    <Newlines>2</Newlines>
+    <AutoDelay>0</AutoDelay>
+    <BotMaxEdits>0</BotMaxEdits>
+    <SupressTag>false</SupressTag>
+    <RegexTypoFix>false</RegexTypoFix>
+  </Editprefs>
+  <General>
+    <AutoSaveEdit>
+      <Enabled>false</Enabled>
+      <SavePeriod>30</SavePeriod>
+      <SaveFile />
+    </AutoSaveEdit>
+    <SelectedSummary>update {{Unofficial name}}/{{Unofficial lore}}</SelectedSummary>
+    <Summaries>
+      <string>clean up</string>
+      <string>re-categorisation per [[WP:CFD|CFD]]</string>
+      <string>clean up and re-categorisation per [[WP:CFD|CFD]]</string>
+      <string>removing category per [[WP:CFD|CFD]]</string>
+      <string>[[Wikipedia:Template substitution|subst:ing]]</string>
+      <string>[[Wikipedia:WikiProject Stub sorting|stub sorting]]</string>
+      <string>[[WP:AWB/T|Typo fixing]]</string>
+      <string>bad link repair</string>
+      <string>Fixing [[Wikipedia:Disambiguation pages with links|links to disambiguation pages]]</string>
+      <string>Unicodifying</string>
+      <string>replace deprecated template {{AnimeManga}} with {{[[Template:Navigation|Navigation]]}}</string>
+      <string>fix template replacement</string>
+      <string>replace deprecated template {{Errata}} with {{[[Template:Navigation|Navigation]]}}</string>
+      <string>replace deprecated template {{Galleries}} with {{[[Template:Navigation|Navigation]]}}</string>
+      <string>misc cleanup</string>
+      <string>update after rename</string>
+      <string>update name/lore parameters</string>
+      <string>update archetype name</string>
+      <string>update after rename, cleanup</string>
+      <string>cleanup</string>
+      <string>deploy {{Distinguish}}</string>
+      <string>rm empty infobox component</string>
+      <string>FMR/DOR info split to separate pages</string>
+      <string>move {{Hide Factbox}} below card table</string>
+      <string>update parameter names</string>
+      <string>update parameter names, standard spacing on parameters</string>
+      <string>fix Italian Labyrinth of Nightmare set abbreviation (LDH → LDI)</string>
+      <string>update link</string>
+      <string>fix Italian Labyrinth of Nightmare set abbreviation (LON → LDI)</string>
+      <string>fix Italian Labyrinth of Nightmare set abbreviation (LDI-IT → LDI-I)</string>
+      <string>remove anime parameters</string>
+      <string>disambiguate Dark Revelation Volume 2</string>
+      <string>fix card number</string>
+      <string>disambiguate Dark Revelation Volume 4</string>
+      <string>disambiguate Dark Revelation Volume 1</string>
+      <string>disambiguate Dark Revelation Volume 3</string>
+      <string>fix card numbers</string>
+      <string>simplify link</string>
+      <string>fix image name</string>
+      <string>update links</string>
+      <string>simplify links</string>
+      <string>remove nonexistent print TP6-PT</string>
+      <string>remove nonexistent print PGL2 Unlimited Edition</string>
+      <string>remove nonexistent print DCR-SP</string>
+      <string>remove nonexistent print RP01-SP</string>
+      <string>use {{card_type}}} instead of {{{type}}} for non-game stuff</string>
+      <string>update category name</string>
+      <string>rm static redirect behavior switch</string>
+      <string>update status parameter names</string>
+      <string>rm control character</string>
+      <string>rm unneeded status parameters</string>
+      <string>update status parameter names/rm unneeded status parameters</string>
+      <string>rm Property:Video Games</string>
+      <string>rm unnecessary status parameters</string>
+      <string>rm width</string>
+      <string>rm parameters for various video games that have been split out</string>
+      <string>update {{Unofficial name}}/{{Unofficial lore}}</string>
+    </Summaries>
+    <PasteMore>
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+    </PasteMore>
+    <FindText />
+    <FindRegex>false</FindRegex>
+    <FindCaseSensitive>false</FindCaseSensitive>
+    <WordWrap>true</WordWrap>
+    <ToolBarEnabled>false</ToolBarEnabled>
+    <BypassRedirect>false</BypassRedirect>
+    <AutoSaveSettings>false</AutoSaveSettings>
+    <noSectionEditSummary>true</noSectionEditSummary>
+    <restrictDefaultsortAddition>false</restrictDefaultsortAddition>
+    <restrictOrphanTagging>false</restrictOrphanTagging>
+    <noMOSComplianceFixes>false</noMOSComplianceFixes>
+    <syntaxHighlightEditBox>false</syntaxHighlightEditBox>
+    <highlightAllFind>true</highlightAllFind>
+    <PreParseMode>false</PreParseMode>
+    <NoAutoChanges>false</NoAutoChanges>
+    <OnLoadAction>0</OnLoadAction>
+    <DiffInBotMode>false</DiffInBotMode>
+    <Minor>false</Minor>
+    <AddToWatchlist>2</AddToWatchlist>
+    <TimerEnabled>true</TimerEnabled>
+    <SortListAlphabetically>true</SortListAlphabetically>
+    <AddIgnoredToLog>false</AddIgnoredToLog>
+    <EditToolbarEnabled>true</EditToolbarEnabled>
+    <filterNonMainSpace>false</filterNonMainSpace>
+    <AutoFilterDuplicates>true</AutoFilterDuplicates>
+    <FocusAtEndOfEditBox>false</FocusAtEndOfEditBox>
+    <scrollToUnbalancedBrackets>true</scrollToUnbalancedBrackets>
+    <TextBoxSize>10</TextBoxSize>
+    <TextBoxFont>Courier New</TextBoxFont>
+    <LowThreadPriority>false</LowThreadPriority>
+    <Beep>false</Beep>
+    <Flash>false</Flash>
+    <Minimize>false</Minimize>
+    <LockSummary>false</LockSummary>
+    <SaveArticleList>true</SaveArticleList>
+    <SuppressUsingAWB>false</SuppressUsingAWB>
+    <AddUsingAWBToActionSummaries>false</AddUsingAWBToActionSummaries>
+    <IgnoreNoBots>false</IgnoreNoBots>
+    <ClearPageListOnProjectChange>false</ClearPageListOnProjectChange>
+    <SortInterWikiOrder>true</SortInterWikiOrder>
+    <ReplaceReferenceTags>true</ReplaceReferenceTags>
+    <LoggingEnabled>true</LoggingEnabled>
+    <AlertPreferences>
+      <int>1</int>
+      <int>2</int>
+      <int>3</int>
+      <int>4</int>
+      <int>5</int>
+      <int>6</int>
+      <int>7</int>
+      <int>8</int>
+      <int>9</int>
+      <int>10</int>
+      <int>11</int>
+      <int>12</int>
+      <int>13</int>
+      <int>14</int>
+      <int>15</int>
+      <int>16</int>
+      <int>17</int>
+      <int>18</int>
+      <int>19</int>
+      <int>20</int>
+      <int>21</int>
+      <int>22</int>
+    </AlertPreferences>
+  </General>
+  <SkipOptions>
+    <SkipNonexistent>true</SkipNonexistent>
+    <Skipexistent>false</Skipexistent>
+    <SkipDontCare>false</SkipDontCare>
+    <SkipWhenNoChanges>false</SkipWhenNoChanges>
+    <SkipSpamFilterBlocked>false</SkipSpamFilterBlocked>
+    <SkipInuse>false</SkipInuse>
+    <SkipWhenOnlyWhitespaceChanged>false</SkipWhenOnlyWhitespaceChanged>
+    <SkipOnlyGeneralFixChanges>false</SkipOnlyGeneralFixChanges>
+    <SkipOnlyMinorGeneralFixChanges>false</SkipOnlyMinorGeneralFixChanges>
+    <SkipOnlyCosmetic>false</SkipOnlyCosmetic>
+    <SkipOnlyCasingChanged>false</SkipOnlyCasingChanged>
+    <SkipIfRedirect>false</SkipIfRedirect>
+    <SkipIfNoAlerts>false</SkipIfNoAlerts>
+    <SkipDoes>false</SkipDoes>
+    <SkipDoesText />
+    <SkipDoesRegex>false</SkipDoesRegex>
+    <SkipDoesCaseSensitive>false</SkipDoesCaseSensitive>
+    <SkipDoesAfterProcessing>false</SkipDoesAfterProcessing>
+    <SkipDoesNot>false</SkipDoesNot>
+    <SkipDoesNotText />
+    <SkipDoesNotRegex>false</SkipDoesNotRegex>
+    <SkipDoesNotCaseSensitive>false</SkipDoesNotCaseSensitive>
+    <SkipDoesNotAfterProcessing>false</SkipDoesNotAfterProcessing>
+    <SkipNoFindAndReplace>false</SkipNoFindAndReplace>
+    <SkipMinorFindAndReplace>false</SkipMinorFindAndReplace>
+    <SkipNoRegexTypoFix>false</SkipNoRegexTypoFix>
+    <SkipNoDisambiguation>false</SkipNoDisambiguation>
+    <SkipNoLinksOnPage>false</SkipNoLinksOnPage>
+    <GeneralSkipList />
+  </SkipOptions>
+  <Module>
+    <Enabled>true</Enabled>
+    <Language>C# 3.5</Language>
+    <Code>        public string ProcessArticle(string ArticleText, string ArticleTitle, int wikiNamespace, out string Summary, out bool Skip)   // line 17
+        {
+            Skip = false;
+            Summary = "";
+// Start Unofficial name match
+Match approxNameMatch = Regex.Match(ArticleText, @"'*The(?: given)? (.+?) names?( given| for this card)? (is|are)( an)? (approximations?|not official)\.?'*\s*");
+string text;
+if (approxNameMatch.Success)
+{
+  ArticleText = ArticleText.Replace(approxNameMatch.Groups[0].Value, "");
+  text = "{{Unofficial name|" + approxNameMatch.Groups[1].Value.Replace("[[Card Names:" + ArticleTitle + "|", "").Replace("]]", "").Replace(", and ", "|").Replace(", ", "|").Replace(" and ", "|") + "}}\r\n";
+  ArticleText = text + ArticleText;
+  Summary += "deploy {{Unofficial name}}";
+}
+// End Unofficial name match
+// Start About/For match
+Match aboutMatch = Regex.Match(ArticleText, @"\:?'*(?:This (?:article|page) is about (.*?)[.,;] )?[Ff]or (.*?),? see\:? \[\[(.*?)\]\]\.?'*\s*");
+string Smry = "";
+if (aboutMatch.Success)
+{
+  ArticleText = ArticleText.Replace(aboutMatch.Groups[0].Value, "");
+  if (aboutMatch.Groups[1].Value != "")
+  {
+    text = "{{About|" + aboutMatch.Groups[1].Value;
+    Smry = "{{About}}";
+  }
+  else
+  {
+    text = "{{For";
+    Smry = "{{For}}";
+  }
+  text += "|" + aboutMatch.Groups[2].Value + "|" + aboutMatch.Groups[3].Value + "}}\r\n";
+  ArticleText = text + ArticleText;
+  if (Summary != "")
+  {
+    Summary += ", ";
+  }
+  Summary += "deploy " + Smry;
+}
+// Start {{Unofficial name}}/{{Unofficial lore}} match
+Match unofficialNames = Regex.Match(ArticleText, @"\{\{Unofficial name\|([^\}]*)\}\}");
+Match unofficialLores = Regex.Match(ArticleText, @"\{\{Unofficial lore\|([^\}]*)\}\}");
+string newText;
+if (unofficialNames.Success)
+{
+  newText = ArticleText.Replace(unofficialNames.Groups[1].Value, unofficialNames.Groups[1].Value.Replace("||", "|").Replace("|", ", "));
+  if (newText != ArticleText)
+  {
+    ArticleText = newText;
+  }
+}
+if (unofficialLores.Success)
+{
+  newText = ArticleText.Replace(unofficialLores.Groups[1].Value, unofficialLores.Groups[1].Value.Replace("||", "|").Replace("|", ", "));
+  if (newText != ArticleText)
+  {
+    ArticleText = newText;
+  }
+}
+  
+  
+            return ArticleText;
+        }</Code>
+  </Module>
+  <ExternalProgram>
+    <Enabled>false</Enabled>
+    <Skip>false</Skip>
+    <Program />
+    <Parameters />
+    <PassAsFile>true</PassAsFile>
+    <OutputFile />
+  </ExternalProgram>
+  <Disambiguation>
+    <Enabled>false</Enabled>
+    <Link />
+    <Variants />
+    <ContextChars>20</ContextChars>
+  </Disambiguation>
+  <Special>
+    <namespaceValues />
+    <remDupes>true</remDupes>
+    <sortAZ>true</sortAZ>
+    <filterTitlesThatContain>false</filterTitlesThatContain>
+    <filterTitlesThatContainText />
+    <filterTitlesThatDontContain>false</filterTitlesThatDontContain>
+    <filterTitlesThatDontContainText />
+    <areRegex>true</areRegex>
+    <opType>1</opType>
+    <remove>
+      <string>"Negate" vs. "Destroy" and Continuous Cards</string>
+      <string>1 For 1 Card</string>
+      <string>1st Edition</string>
+      <string>20th Secret Rare</string>
+      <string>3 is better than 2</string>
+      <string>?</string>
+      <string>???</string>
+      <string>A Hero Lives</string>
+      <string>A Rare Format</string>
+      <string>ABC-Dragon Buster</string>
+      <string>ATK</string>
+      <string>Ability</string>
+      <string>Absorption</string>
+      <string>Accel Synchro Monster</string>
+      <string>Accel Synchro Summon</string>
+      <string>Actions</string>
+      <string>Activate</string>
+      <string>Activation &amp; Targeting Eligibility</string>
+      <string>Activation requirement</string>
+      <string>Add a card</string>
+      <string>Advanced Format</string>
+      <string>Advanced Gameplay FAQ</string>
+      <string>Advanced Ritual Art</string>
+      <string>Aggiba, the Malevolent Sh'nn S'yo</string>
+      <string>Air, Earth, Fire, and Water Format</string>
+      <string>Alexis Rhodes (Tag Force)</string>
+      <string>Alignment</string>
+      <string>Altergeist Multifaker</string>
+      <string>Amatsu-Okami of the Divine Peaks</string>
+      <string>Amazoness Archer</string>
+      <string>Ancient Fairy Dragon</string>
+      <string>Ancient Gear Token</string>
+      <string>Ancient Treasure</string>
+      <string>Anti-support</string>
+      <string>Apparition</string>
+      <string>April 2003 Lists (OCG)</string>
+      <string>April 2003 Lists (TCG)</string>
+      <string>April 2004 Lists</string>
+      <string>April 2005 Lists</string>
+      <string>April 2006 Lists</string>
+      <string>April 2014 Lists (OCG)</string>
+      <string>April 2014 Lists (TCG)</string>
+      <string>April 2015 Lists (OCG)</string>
+      <string>April 2015 Lists (TCG)</string>
+      <string>April 2016 Lists (OCG)</string>
+      <string>April 2016 Lists (TCG)</string>
+      <string>April 2017 Lists</string>
+      <string>April 2018 Lists</string>
+      <string>April 2019 Lists (OCG)</string>
+      <string>April 2019 Lists (TCG)</string>
+      <string>Aqua</string>
+      <string>Archetype</string>
+      <string>Archetype condition</string>
+      <string>Archetype-exclusion condition</string>
+      <string>Arkana (World Championship)</string>
+      <string>Armageddon Knight</string>
+      <string>Armament of the Lethal Lords</string>
+      <string>Armor monster</string>
+      <string>Aroma Strategy</string>
+      <string>Ash Blossom &amp; Joyous Spring</string>
+      <string>Asia</string>
+      <string>Asian-English</string>
+      <string>Aster Phoenix (Tag Force)</string>
+      <string>Astrograph Sorcerer</string>
+      <string>Attach</string>
+      <string>Attack</string>
+      <string>Attack Effect</string>
+      <string>Attack Position</string>
+      <string>Attack declaration window</string>
+      <string>Attack target</string>
+      <string>Attribute</string>
+      <string>August 2000 Lists</string>
+      <string>August 2003 Lists</string>
+      <string>August 2004 Lists</string>
+      <string>August 2016 Lists</string>
+      <string>August 2017 Lists (Duel Links)</string>
+      <string>August 2018 Lists (Duel Links)</string>
+      <string>Axel Brodie (Tag Force)</string>
+      <string>Babycerasaurus</string>
+      <string>Back From the Forbidden! Format</string>
+      <string>Banish</string>
+      <string>Banlist</string>
+      <string>Basic Gameplay FAQ</string>
+      <string>Basics of Monster Cards</string>
+      <string>Bastion Misawa (Tag Force)</string>
+      <string>Battle</string>
+      <string>Battle City Rules</string>
+      <string>Battle Phase</string>
+      <string>Battle Step</string>
+      <string>Battle damage</string>
+      <string>Battle position</string>
+      <string>Battle position change</string>
+      <string>Battlewasp - Arbalest the Rapidfire</string>
+      <string>Battlewasp - Azusa the Ghost Bow</string>
+      <string>Battlewasp - Ballista the Armageddon</string>
+      <string>Battlewasp - Dart the Hunter</string>
+      <string>Battlewasp - Halberd the Charge</string>
+      <string>Battlewasp - Hama the Conquering Bow</string>
+      <string>Battlewasp - Nest</string>
+      <string>Battlewasp - Pin the Bullseye</string>
+      <string>Battlewasp - Sting the Poison</string>
+      <string>Battlewasp - Twinbow the Attacker</string>
+      <string>Beast</string>
+      <string>Beast-Warrior</string>
+      <string>Beatdown!</string>
+      <string>Beatraptor</string>
+      <string>Beatrice, Lady of the Eternal</string>
+      <string>Black Feather Counter (card)</string>
+      <string>Black Luster Soldier (Normal)</string>
+      <string>Black Luster Soldier - Envoy of the Beginning</string>
+      <string>Black Magic</string>
+      <string>Black Magic (Alignment)</string>
+      <string>Black Sheep Token</string>
+      <string>Blackwing - Gofu the Vague Shadow</string>
+      <string>Blackwing - Steam the Cloak</string>
+      <string>Blair Flannigan (Tag Force)</string>
+      <string>Blaster, Dragon Ruler of Infernos</string>
+      <string>Blaze Fenix, the Burning Bombardment Bird</string>
+      <string>Book of Moon</string>
+      <string>Booster Pack</string>
+      <string>Borreload Furious Dragon</string>
+      <string>Bouncing</string>
+      <string>Brain Control</string>
+      <string>Brain Control (DDS)</string>
+      <string>Brain Control (DM4)</string>
+      <string>Break</string>
+      <string>Breaker the Magical Warrior</string>
+      <string>Brilliant Fusion</string>
+      <string>Broken</string>
+      <string>Buster Blader (Duel Arena)</string>
+      <string>Butterfly Dagger - Elma</string>
+      <string>Call of the Haunted</string>
+      <string>Call of the Haunted (Skill Card)</string>
+      <string>Cannon Soldier</string>
+      <string>Cannon Soldier MK-2</string>
+      <string>Card Checklist</string>
+      <string>Card Destruction</string>
+      <string>Card Number</string>
+      <string>Card Pieces</string>
+      <string>Card Trooper</string>
+      <string>Card advantage</string>
+      <string>Card backing</string>
+      <string>Card colors</string>
+      <string>Card evolutions</string>
+      <string>Card layout</string>
+      <string>Card legality</string>
+      <string>Card of Last Will</string>
+      <string>Card of Safe Return</string>
+      <string>Card storylines</string>
+      <string>Card text</string>
+      <string>Card type</string>
+      <string>Case Topper</string>
+      <string>Caste Party Format</string>
+      <string>Ceasefire</string>
+      <string>Chain</string>
+      <string>Chain Link</string>
+      <string>Chain Strike</string>
+      <string>Chaining to your own Cards</string>
+      <string>Chains, Activation, and Resolution</string>
+      <string>Change of Heart</string>
+      <string>Change of Heart (DDS)</string>
+      <string>Change of Heart (DM4)</string>
+      <string>Change of Heart (TSC)</string>
+      <string>Chaos</string>
+      <string>Chaos Emperor Dragon - Envoy of the End</string>
+      <string>Chaos Sorcerer</string>
+      <string>Character Card</string>
+      <string>Charisma</string>
+      <string>Charisma Token</string>
+      <string>Chazz Princeton (Tag Force)</string>
+      <string>Chicken Game</string>
+      <string>Chimaera, the Master of Beasts</string>
+      <string>Chronograph Sorcerer</string>
+      <string>Cir, Malebranche of the Burning Abyss</string>
+      <string>City Deck</string>
+      <string>Co-linked</string>
+      <string>Cocoon of Evolutio (DM4)</string>
+      <string>Coins</string>
+      <string>Cold Wave</string>
+      <string>Column</string>
+      <string>Combo</string>
+      <string>Common</string>
+      <string>Common Summoning condition</string>
+      <string>Condition</string>
+      <string>Confiscation</string>
+      <string>Contact Fusion</string>
+      <string>Continuous Effect</string>
+      <string>Continuous Spell Card</string>
+      <string>Continuous Trap Card</string>
+      <string>Continuous Trap Spell Card</string>
+      <string>Continuous-like Effect</string>
+      <string>Control</string>
+      <string>Control only one</string>
+      <string>Controlled loop</string>
+      <string>Cost</string>
+      <string>Counter</string>
+      <string>Counter (card)</string>
+      <string>Counter Trap Card</string>
+      <string>Counter Traps and Chains</string>
+      <string>Cover card</string>
+      <string>Creator God</string>
+      <string>Creator of Hope</string>
+      <string>Creator of Miracles</string>
+      <string>Cross Xyz Summon</string>
+      <string>Crossout Designator</string>
+      <string>Crush Card Virus</string>
+      <string>Crystron Needlefiber</string>
+      <string>Crystron Token</string>
+      <string>Curse Necrofear</string>
+      <string>Cut</string>
+      <string>Cy-Caliber</string>
+      <string>Cyber Dragon</string>
+      <string>Cyber Jar</string>
+      <string>Cyber-Stein</string>
+      <string>Cyberse</string>
+      <string>D.D. Warrior Lady</string>
+      <string>D/D Evil</string>
+      <string>DARK</string>
+      <string>DEF</string>
+      <string>DIVINE</string>
+      <string>DRAW</string>
+      <string>Daigusto Emeral</string>
+      <string>Damage</string>
+      <string>Damage Step</string>
+      <string>Damage calculation</string>
+      <string>Dandylion</string>
+      <string>Dark Armed Dragon</string>
+      <string>Dark Armed, the Dragon of Annihilation</string>
+      <string>Dark Grepher</string>
+      <string>Dark Hole</string>
+      <string>Dark Hole (DDS)</string>
+      <string>Dark Hole (DM4)</string>
+      <string>Dark Hole (TSC)</string>
+      <string>Dark Magician of Chaos</string>
+      <string>Dark Magician of Chaos OTK</string>
+      <string>Dark Occultism</string>
+      <string>Dark Scorpion/Makyura OTK</string>
+      <string>Dark Spirit of the Denial</string>
+      <string>Dark Spirit of the Malice</string>
+      <string>Dark Synchro Monster</string>
+      <string>Dark Synchro Summon</string>
+      <string>Dark Tuner monster</string>
+      <string>Dark Yugi (manga)</string>
+      <string>Darkness Metal, the Dragon of Dark Steel</string>
+      <string>Darkness/Monster A</string>
+      <string>Darkness/Monster B</string>
+      <string>Darkness/Spell A</string>
+      <string>Darkness/Trap A</string>
+      <string>Darkness/Trap B</string>
+      <string>Darkness/Trap C</string>
+      <string>Darkness/Trap D</string>
+      <string>Darkness/Trap E</string>
+      <string>Death Sentence</string>
+      <string>Debris-Hime</string>
+      <string>December 2002 Lists</string>
+      <string>December 2018 Lists</string>
+      <string>Deck Cutting &amp; Shuffling</string>
+      <string>Deck Error</string>
+      <string>Deck Error - Failure to De-Side Deck</string>
+      <string>Deck Error - Illegal Deck</string>
+      <string>Deck Error - Illegal Decklist</string>
+      <string>Deck Master</string>
+      <string>Deck Master ability</string>
+      <string>Deck Recipe</string>
+      <string>Deck Zone</string>
+      <string>Declare</string>
+      <string>Deep Sea Diva</string>
+      <string>Defense Position</string>
+      <string>Delinquent Duo</string>
+      <string>Delta Accel Synchro Monster</string>
+      <string>Delta Accel Synchro Summon</string>
+      <string>Demon Magic (Alignment)</string>
+      <string>Denglong, First of the Yang Zing</string>
+      <string>Destiny Draw (Skill Card)</string>
+      <string>Destiny Draw (rule)</string>
+      <string>Destiny HERO - Disk Commander</string>
+      <string>Destiny HERO - Malicious</string>
+      <string>Destroy</string>
+      <string>Destroyed by battle</string>
+      <string>Detach</string>
+      <string>Dewloren, Tiger King of the Ice Barrier</string>
+      <string>Diamond Dude Turbo</string>
+      <string>Difference between Costs and Effects</string>
+      <string>Dimension Fusion</string>
+      <string>Dimension Summon</string>
+      <string>Dimensional Fissure</string>
+      <string>Dimensioned</string>
+      <string>Dinomight Knight, the True Dracofighter</string>
+      <string>Dinosaur</string>
+      <string>Direct attack</string>
+      <string>Disaster Dragon</string>
+      <string>Discard</string>
+      <string>Disqualification</string>
+      <string>Disqualification Review &amp; Suspended Players</string>
+      <string>Divine (Alignment)</string>
+      <string>Divine Sword - Phoenix Blade</string>
+      <string>Divine Wind of Mist Valley</string>
+      <string>Divine-Beast</string>
+      <string>Djinn Releaser of Rituals</string>
+      <string>Don Thousand/Monster A</string>
+      <string>Don Thousand/Monster B</string>
+      <string>Don Thousand/Monster C</string>
+      <string>Don Thousand/Spell A</string>
+      <string>Don Thousand/Spell B</string>
+      <string>Don Thousand/Spell C</string>
+      <string>Don Thousand/Trap A</string>
+      <string>Don Thousand/Trap B</string>
+      <string>Doppel Token</string>
+      <string>Double Attack (mechanic)</string>
+      <string>Double Deck Format</string>
+      <string>Double Iris Magician</string>
+      <string>Double Tributer</string>
+      <string>Double Tuning</string>
+      <string>Draco Face-Off</string>
+      <string>Dragon</string>
+      <string>Dragon Caller</string>
+      <string>Dragon Lord Token</string>
+      <string>Dragon Magic</string>
+      <string>Dragonic Diagram</string>
+      <string>Dragonoid Token</string>
+      <string>Draw Phase</string>
+      <string>Draw a card</string>
+      <string>Draw engine</string>
+      <string>Drawing Cards - Drawing Extra Cards</string>
+      <string>Duel</string>
+      <string>Duel Monsters Arena</string>
+      <string>Duel Points</string>
+      <string>Duel Terminal - Preview</string>
+      <string>Duel Terminal - Preview Wave 2</string>
+      <string>Duel Terminal Edition</string>
+      <string>Duel winner</string>
+      <string>Duelist Road -Piece of Memory- Side: Yami Yugi</string>
+      <string>Duelist Road -Piece of Memory- Side: Yugi Muto</string>
+      <string>EARTH</string>
+      <string>Earth (Alignment)</string>
+      <string>Earthbound Overwalker</string>
+      <string>Ectoplasmic Fortification!</string>
+      <string>Effect</string>
+      <string>Effect Monster</string>
+      <string>Effect damage</string>
+      <string>Ehther the Heavenly Monarch</string>
+      <string>El Shaddoll Construct</string>
+      <string>Elder Entity Norden</string>
+      <string>Elemental HERO Shadow Mist</string>
+      <string>Elemental HERO Stratos</string>
+      <string>Elemental Lord</string>
+      <string>Emergency Teleport</string>
+      <string>Emissary of Darkness Token</string>
+      <string>Emperor of Lightning</string>
+      <string>End Phase</string>
+      <string>End Step</string>
+      <string>Engine</string>
+      <string>Equip</string>
+      <string>Equip Card</string>
+      <string>Equip Spell Card</string>
+      <string>Equip Trap Card</string>
+      <string>Errata</string>
+      <string>Evigishki Gustkraken</string>
+      <string>Evigishki Mind Augus</string>
+      <string>Evil HERO Malicious Bane</string>
+      <string>Excavate</string>
+      <string>Exchange of the Spirit</string>
+      <string>Exchange of the Spirit OTK</string>
+      <string>Exod. of Forbidden</string>
+      <string>Exod. of Forbidden (DM4)</string>
+      <string>Exodia the Forbidden One</string>
+      <string>Exodia the Forbidden One (TSC)</string>
+      <string>Expert Gameplay FAQ</string>
+      <string>Extra Deck</string>
+      <string>Extra Deck Zone</string>
+      <string>Extra Link</string>
+      <string>Extra Monster Zone</string>
+      <string>Eye of Anubis Hologram</string>
+      <string>E☆HERO Pit Boss</string>
+      <string>FAQ card</string>
+      <string>FIRE</string>
+      <string>Face-down</string>
+      <string>Face-up</string>
+      <string>Fairy</string>
+      <string>Fairy Tail - Snow</string>
+      <string>Fast effect</string>
+      <string>Fast effect timing</string>
+      <string>February 2000 Lists</string>
+      <string>February 2004 Lists</string>
+      <string>February 2014 Lists</string>
+      <string>February 2016 Lists</string>
+      <string>February 2018 Lists</string>
+      <string>February 2018 Lists (Duel Links)</string>
+      <string>Fiber Jar</string>
+      <string>Field</string>
+      <string>Field Spell Card</string>
+      <string>Field Trap Card</string>
+      <string>Field Virus Card</string>
+      <string>Field Zone</string>
+      <string>Field advantage</string>
+      <string>Field-Unique</string>
+      <string>Fiend</string>
+      <string>Fiend's Mirror (Normal)</string>
+      <string>Final Countdown</string>
+      <string>Final Draw</string>
+      <string>Fire (Alignment)</string>
+      <string>Firewall Dragon</string>
+      <string>Firewall Dragon Darkfluid</string>
+      <string>First Turn Kill</string>
+      <string>Fish</string>
+      <string>Fishborg</string>
+      <string>Fishborg Blaster</string>
+      <string>Fissure</string>
+      <string>Flavor text</string>
+      <string>Flight of the Harpies</string>
+      <string>Flip</string>
+      <string>Flip Summon</string>
+      <string>Flip effect</string>
+      <string>Flip monster</string>
+      <string>Fluff Token</string>
+      <string>Foolish Burial</string>
+      <string>Forbidden</string>
+      <string>Forbidden &amp; Limited Lists (WC08-VG)</string>
+      <string>Forbidden (disambiguation)</string>
+      <string>Forest (Alignment)</string>
+      <string>Fortune Fairy Ann</string>
+      <string>Fortune Fairy Chee</string>
+      <string>Fortune Fairy En</string>
+      <string>Fortune Fairy Hikari</string>
+      <string>Fortune Fairy Hu</string>
+      <string>Fortune Fairy Swee</string>
+      <string>Fossil Dig</string>
+      <string>Frog</string>
+      <string>Frog Monarch</string>
+      <string>Fusion Material</string>
+      <string>Fusion Material Monsters &amp; Ritual Spell Tributes</string>
+      <string>Fusion Monster</string>
+      <string>Fusion Substitute Monster</string>
+      <string>Fusion Summon</string>
+      <string>Fusion Summoning condition</string>
+      <string>Future Fusion</string>
+      <string>Gadget Token</string>
+      <string>Galaxy Satellite Dragon</string>
+      <string>Gallis the Star Beast OTK</string>
+      <string>Game Loss</string>
+      <string>Game mechanics</string>
+      <string>Game state</string>
+      <string>Gandora FTK</string>
+      <string>Gateway of the Six</string>
+      <string>Gem-Knight Master Diamond</string>
+      <string>Gemini monster</string>
+      <string>Generation Duel Tournament - 5D's Lists</string>
+      <string>Generation Duel Tournament - ARC-V Lists</string>
+      <string>Generation Duel Tournament - Duel Monsters Lists</string>
+      <string>Generation Duel Tournament - GX Lists</string>
+      <string>Generation Duel Tournament - ZEXAL Lists</string>
+      <string>Genex Ally Birdman</string>
+      <string>Get Your Game On!</string>
+      <string>Ghost Rare</string>
+      <string>Giant Card</string>
+      <string>Giant Trunade</string>
+      <string>Gimmick Puppet Gigantes Doll</string>
+      <string>Gingerbread House</string>
+      <string>Gladiator Beast</string>
+      <string>Glow-Up Bulb</string>
+      <string>Goat Control</string>
+      <string>Gold Rare</string>
+      <string>Gold Sarcophagus</string>
+      <string>Good Goblin Housekeeping</string>
+      <string>Gorz the Emissary of Darkness</string>
+      <string>Graceful Charity</string>
+      <string>Graff, Malebranche of the Burning Abyss</string>
+      <string>Grandopolis, The Eternal Golden City</string>
+      <string>Gravekeeper's Lot</string>
+      <string>Graveyard</string>
+      <string>Graveyard Control</string>
+      <string>Gravity Bind</string>
+      <string>Great Moth (DM4)</string>
+      <string>Green Baboon, Defender of the Forest</string>
+      <string>Greiger (Duel Transer)</string>
+      <string>Grinder Golem</string>
+      <string>Grit</string>
+      <string>Grizzly, the Red Star Beast</string>
+      <string>HERO</string>
+      <string>Hand</string>
+      <string>Hand advantage</string>
+      <string>Hand destruction</string>
+      <string>Hand size limit</string>
+      <string>Happy Marriage</string>
+      <string>Harmonizing Magician</string>
+      <string>Harpie's Feather Duster</string>
+      <string>Harpie's Feather Duster (TSC)</string>
+      <string>Heavy Storm</string>
+      <string>Heavy Storm (DM4)</string>
+      <string>Heavy Storm (TSC)</string>
+      <string>Heavymetalfoes Electrumite</string>
+      <string>Heishin (Dark Duel Stories)</string>
+      <string>Hierarchy</string>
+      <string>Hippo Token</string>
+      <string>Historic Forbidden/Limited Chart</string>
+      <string>Holographic Rare</string>
+      <string>Human</string>
+      <string>Ignister Prominence, the Blasting Dracoslayer</string>
+      <string>Ignition Effect</string>
+      <string>Ignition-like Effect</string>
+      <string>Ignoring the Summoning conditions</string>
+      <string>Illegal</string>
+      <string>Illusion Card</string>
+      <string>Illusion Gate</string>
+      <string>Illusion Magic (Alignment)</string>
+      <string>Illusion Magic (Type)</string>
+      <string>Immortal</string>
+      <string>Imperial Order</string>
+      <string>In Play</string>
+      <string>Infernity Archfiend</string>
+      <string>Infernity Launcher</string>
+      <string>Infernoid Token</string>
+      <string>Infinite loop</string>
+      <string>Infraction</string>
+      <string>Insect</string>
+      <string>Instant Attack</string>
+      <string>Intermediate Gameplay FAQ</string>
+      <string>Interrupted Kaiju Slumber</string>
+      <string>Introduction to Effect Monsters</string>
+      <string>Introduction to Normal Monsters</string>
+      <string>Invoked Mechaba</string>
+      <string>Inzektor</string>
+      <string>Inzektor Dragonfly</string>
+      <string>Ipiria</string>
+      <string>Iron Knight of Revolution</string>
+      <string>Isis Ishtar (Dark Duel Stories)</string>
+      <string>It's a Toon World!</string>
+      <string>Jaden Yuki (Tag Force)</string>
+      <string>Jakob (Tag Force)</string>
+      <string>January 2001 Lists</string>
+      <string>January 2002 Lists</string>
+      <string>January 2003 Lists</string>
+      <string>January 2014 Lists</string>
+      <string>January 2015 Lists (OCG)</string>
+      <string>January 2015 Lists (TCG)</string>
+      <string>January 2016 Lists</string>
+      <string>January 2017 Lists</string>
+      <string>January 2017 Lists (Duel Generation)</string>
+      <string>January 2018 Lists</string>
+      <string>January 2019 Lists (Duel Links)</string>
+      <string>January 2019 Lists (OCG)</string>
+      <string>January 2019 Lists (TCG)</string>
+      <string>January 24, 2018 Lists (Duel Links)</string>
+      <string>January 9, 2018 Lists (Duel Links)</string>
+      <string>Jar</string>
+      <string>Jesse Anderson (Tag Force)</string>
+      <string>Jim Crocodile Cook (Tag Force)</string>
+      <string>Jinzo</string>
+      <string>Judge</string>
+      <string>Judgment, the Dragon of Heaven</string>
+      <string>July 1999 Lists</string>
+      <string>July 2000 Lists</string>
+      <string>July 2002 Lists</string>
+      <string>July 2003 Lists (OCG)</string>
+      <string>July 2003 Lists (TCG)</string>
+      <string>July 2014 Lists (OCG)</string>
+      <string>July 2014 Lists (TCG)</string>
+      <string>July 2015 Lists (OCG)</string>
+      <string>July 2015 Lists (TCG)</string>
+      <string>July 2016 Lists</string>
+      <string>July 2017 Lists</string>
+      <string>July 2018 Lists</string>
+      <string>June 2007 Lists</string>
+      <string>June 2017 Lists</string>
+      <string>June 2018 Lists (Duel Links)</string>
+      <string>Juno, the Celestial Goddess</string>
+      <string>Jurassic Impact (Tag Force)</string>
+      <string>Jurraegg Token</string>
+      <string>Kaiba's Collector Box</string>
+      <string>Kaiser Colosseum</string>
+      <string>Katsuya Jonouchi (manga)</string>
+      <string>Kattobingu</string>
+      <string>King Landia the Goldfang</string>
+      <string>King of Destruction - Xexex</string>
+      <string>Knightmare Goblin</string>
+      <string>Know your Tournament Formats</string>
+      <string>Konami Arcade Games</string>
+      <string>Konami's Yu-Gi-Oh! Duel Monsters</string>
+      <string>Kuriboh Token</string>
+      <string>Kuzunoha, the Onmyojin</string>
+      <string>L Arm of Forbidden</string>
+      <string>L Arm of Forbidden (DM4)</string>
+      <string>L Leg of Forbidden</string>
+      <string>L Leg of Forbidden (DM4)</string>
+      <string>LAUGH</string>
+      <string>LIGHT</string>
+      <string>LP</string>
+      <string>Lady Debug</string>
+      <string>Lamb Token</string>
+      <string>Larvae Moth (DM4)</string>
+      <string>Last Gamble</string>
+      <string>Last Turn</string>
+      <string>Last Will</string>
+      <string>Laval Token</string>
+      <string>Lavalval Chain</string>
+      <string>Leaves the field</string>
+      <string>Left Arm of the Forbidden One</string>
+      <string>Left Arm of the Forbidden One (TSC)</string>
+      <string>Left Leg of the Forbidden One</string>
+      <string>Left Leg of the Forbidden One (TSC)</string>
+      <string>Legal</string>
+      <string>Legendary Collection 2: The Duel Academy Years Mega Pack</string>
+      <string>Legendary Collection 4: Joey's World</string>
+      <string>Legendary Dragon of White</string>
+      <string>Legendary Magician of Dark</string>
+      <string>Leonardo's Silver Skyship</string>
+      <string>Level</string>
+      <string>Level Eater</string>
+      <string>Level Limit - Area B</string>
+      <string>Level Up</string>
+      <string>Level condition</string>
+      <string>Life Equalizer</string>
+      <string>Light and Darkness Dragon</string>
+      <string>Lightsworn</string>
+      <string>Limbo</string>
+      <string>Limit Over Accel Synchro Monster</string>
+      <string>Limit Over Accel Synchro Summon</string>
+      <string>Limitation text</string>
+      <string>Limited</string>
+      <string>Limited Edition</string>
+      <string>Limiter Removal</string>
+      <string>Lingering Effect</string>
+      <string>Link Arrow</string>
+      <string>Link Material</string>
+      <string>Link Monster</string>
+      <string>Link Origin</string>
+      <string>Link Rating</string>
+      <string>Link Spell Card</string>
+      <string>Link Summon</string>
+      <string>Linked</string>
+      <string>List of Konami's Yu-Gi-Oh! Duel Monsters cards</string>
+      <string>List of modified card artworks</string>
+      <string>List of renamed cards</string>
+      <string>Lockdown</string>
+      <string>Lonefire Blossom</string>
+      <string>Look</string>
+      <string>Lorelei, the Symphonic Arsenal</string>
+      <string>Luck Loan</string>
+      <string>Luster Pendulum, the Dracoslayer</string>
+      <string>M-X-Saber Invoker</string>
+      <string>Machine</string>
+      <string>Macro Cosmos</string>
+      <string>Mage Power</string>
+      <string>Magic Cylinder</string>
+      <string>Magical Explosion</string>
+      <string>Magical Mid-Breaker Field</string>
+      <string>Magical Scientist</string>
+      <string>Magical Stone Excavation</string>
+      <string>Magicalized Fusion</string>
+      <string>Magician of Faith</string>
+      <string>Main Deck</string>
+      <string>Main Monster Zone</string>
+      <string>Main Phase</string>
+      <string>Main Phase 1</string>
+      <string>Main Phase 2</string>
+      <string>Maintenance cost</string>
+      <string>Majespecter Unicorn - Kirin</string>
+      <string>Makyura the Destructor</string>
+      <string>Mandatory effect</string>
+      <string>Manticore of Darkness</string>
+      <string>March 2004 Lists</string>
+      <string>March 2005 Lists</string>
+      <string>March 2006 Lists</string>
+      <string>March 2007 Lists (OCG)</string>
+      <string>March 2007 Lists (TCG)</string>
+      <string>March 2008 Lists (OCG)</string>
+      <string>March 2008 Lists (TCG)</string>
+      <string>March 2008 Lists (WC08-VG)</string>
+      <string>March 2009 Lists (OCG)</string>
+      <string>March 2009 Lists (TCG)</string>
+      <string>March 2010 Lists (OCG)</string>
+      <string>March 2010 Lists (TCG)</string>
+      <string>March 2011 Lists (OCG)</string>
+      <string>March 2011 Lists (TCG)</string>
+      <string>March 2012 Lists (OCG)</string>
+      <string>March 2012 Lists (TCG)</string>
+      <string>March 2013 Lists (OCG)</string>
+      <string>March 2013 Lists (TCG)</string>
+      <string>March 2016 Lists</string>
+      <string>March 2017 Lists</string>
+      <string>March 2019 Lists (Duel Links)</string>
+      <string>Marik Ishtar (Dark Duel Stories)</string>
+      <string>Marik Ishtar (manga)</string>
+      <string>Marik Ishtar's Decks</string>
+      <string>Marked Cards</string>
+      <string>Marked Cards - Major</string>
+      <string>Marked Cards - Minor</string>
+      <string>Marked card</string>
+      <string>Marshmallon</string>
+      <string>Masahiro the Dark Clown</string>
+      <string>Mask Change II</string>
+      <string>Mask of Darkness</string>
+      <string>Mass Driver</string>
+      <string>Mass Monster Removal</string>
+      <string>Mass Spell and Trap Removal</string>
+      <string>Master Duel</string>
+      <string>Master Peace, the True Dracoslaying King</string>
+      <string>Master Rules</string>
+      <string>Match</string>
+      <string>Match Loss</string>
+      <string>Match winner</string>
+      <string>Material</string>
+      <string>Mathematician</string>
+      <string>Maximum Deck size</string>
+      <string>Maximum of 3 Rule</string>
+      <string>Maxx "C"</string>
+      <string>May 2000 Lists</string>
+      <string>May 2001 Lists</string>
+      <string>May 2002 Lists (OCG)</string>
+      <string>May 2002 Lists (TCG)</string>
+      <string>May 2003 Lists</string>
+      <string>May 2008 Lists</string>
+      <string>May 2018 Lists</string>
+      <string>May 2019 Lists (Duel Links)</string>
+      <string>Mecha Phantom Beast</string>
+      <string>Mecha Phantom Beast Token</string>
+      <string>Mega-Banned</string>
+      <string>Mega-Banned Tournament</string>
+      <string>Megamorph</string>
+      <string>Megamorph (DDS)</string>
+      <string>Megamorph (DM4)</string>
+      <string>Memories of the Duel King</string>
+      <string>Metagame</string>
+      <string>Metamorphosis</string>
+      <string>Meteo the Matchless</string>
+      <string>Mill</string>
+      <string>Millennium Eye (Skill Card)</string>
+      <string>Millennium Necklace (Skill Card)</string>
+      <string>Mind Crush</string>
+      <string>Mind Master</string>
+      <string>Mind Scan (Skill Card)</string>
+      <string>Minimum Deck size</string>
+      <string>Minus monster</string>
+      <string>Miracle Stone</string>
+      <string>Mirage of Nightmare</string>
+      <string>Mirror Force</string>
+      <string>Misprint</string>
+      <string>Monster Card</string>
+      <string>Monster Gate</string>
+      <string>Monster Reborn</string>
+      <string>Monster Reborn (TSC)</string>
+      <string>Monster Zone</string>
+      <string>Monster effect</string>
+      <string>Morphing Jar</string>
+      <string>Morphing Jar 2</string>
+      <string>Multiply (DM4)</string>
+      <string>Mystical Space Typhoon</string>
+      <string>Name condition</string>
+      <string>Necroface</string>
+      <string>Negate</string>
+      <string>Negating Continuous Card Costs</string>
+      <string>Negating Summons</string>
+      <string>Negative Level</string>
+      <string>Nekroz Cycle</string>
+      <string>Nekroz of Unicore</string>
+      <string>Neo-Spacian Grand Mole</string>
+      <string>Nerf</string>
+      <string>Netrep</string>
+      <string>New Year's Resolution Format</string>
+      <string>New Year's Resolution Lists</string>
+      <string>Night Assailant</string>
+      <string>Nitemare (Dark Duel Stories)</string>
+      <string>Nobleman of Crossout</string>
+      <string>Nomi</string>
+      <string>Non-Effect Monster</string>
+      <string>Non-Tribute Monster</string>
+      <string>Non-game card</string>
+      <string>Noritoshi in Darkest Rainment</string>
+      <string>Normal Monster</string>
+      <string>Normal Rare</string>
+      <string>Normal Set</string>
+      <string>Normal Speed Spell Card</string>
+      <string>Normal Spell Card</string>
+      <string>Normal Summon</string>
+      <string>Normal Summon Monster</string>
+      <string>Normal Summoning condition</string>
+      <string>Normal Trap Card</string>
+      <string>Normal Trap Spell Card</string>
+      <string>Normal Virus Card</string>
+      <string>Normal draw</string>
+      <string>North American WCQ 2011 Special: Yugi vs. Yusei</string>
+      <string>North American WCQ 2013 Special: Kaiba vs. Pegasus</string>
+      <string>North American WCQ 2015 Special: Pegasus vs. Marik</string>
+      <string>Not Legal</string>
+      <string>Not Legal Yet</string>
+      <string>Not Yet Legal</string>
+      <string>Not Yet Released</string>
+      <string>Not legal</string>
+      <string>Not yet legal</string>
+      <string>Not yet released</string>
+      <string>Nova</string>
+      <string>November 2000 Lists</string>
+      <string>November 2003 Lists</string>
+      <string>November 2013 Lists</string>
+      <string>November 2015 Lists</string>
+      <string>November 2017 Lists</string>
+      <string>November 2017 Lists (Duel Links)</string>
+      <string>Number 11: Big Eye (Duel Arena)</string>
+      <string>Number 16: Shock Master</string>
+      <string>Number 42: Galaxy Tomahawk</string>
+      <string>Number 60: Dugales of Forgotten Time</string>
+      <string>Number 76: Gladiyell the Melody Lumaestra</string>
+      <string>Number 86: Heroic Champion - Rhongomyniad</string>
+      <string>Number 95: Galaxy-Eyes Dark Matter Dragon</string>
+      <string>Number 97: Dragravion</string>
+      <string>OCG-only</string>
+      <string>Obelisk</string>
+      <string>Obelisk the Tormentor (DM4)</string>
+      <string>Obelisk the Tormentor (original)</string>
+      <string>October 2002 Lists</string>
+      <string>October 2003 Lists</string>
+      <string>October 2004 Lists</string>
+      <string>October 2005 Lists</string>
+      <string>October 2013 Lists</string>
+      <string>October 2014 Lists (Duel Generation)</string>
+      <string>October 2014 Lists (OCG)</string>
+      <string>October 2014 Lists (TCG)</string>
+      <string>October 2015 Lists</string>
+      <string>October 2016 Lists</string>
+      <string>October 2017 Lists</string>
+      <string>October 2018 Lists</string>
+      <string>October 2018 Lists (Duel Links)</string>
+      <string>Official Proxy</string>
+      <string>Ojama Token</string>
+      <string>Ojama Trio</string>
+      <string>Once per turn</string>
+      <string>One Day of Peace</string>
+      <string>One Turn Kill</string>
+      <string>One for One</string>
+      <string>Option Token</string>
+      <string>Optional effect</string>
+      <string>Original ATK and DEF</string>
+      <string>Original Level and Rank</string>
+      <string>Original artwork</string>
+      <string>Overload Fusion</string>
+      <string>Overscale Pendulum</string>
+      <string>Owner</string>
+      <string>PSY-Framelord Omega</string>
+      <string>Painful Choice</string>
+      <string>Pal-O'Mine-zation!</string>
+      <string>Pantheism of the Monarchs</string>
+      <string>Parallel Rare</string>
+      <string>Password</string>
+      <string>Pay</string>
+      <string>Peak Performance</string>
+      <string>Pegasus Ultimate Challenge</string>
+      <string>Pegasus/Monster A</string>
+      <string>Pegasus/Monster B</string>
+      <string>Pegasus/Monster C</string>
+      <string>Pegasus/Monster D</string>
+      <string>Pegasus/Spell A</string>
+      <string>Pegasus/Spell B</string>
+      <string>Pegasus/Spell C</string>
+      <string>Pegasus/Trap A</string>
+      <string>Pendulum Call</string>
+      <string>Pendulum Effect</string>
+      <string>Pendulum Monster</string>
+      <string>Pendulum Scale</string>
+      <string>Pendulum Summon</string>
+      <string>Pendulum Summoning condition</string>
+      <string>Pendulum Zone</string>
+      <string>Perfect Circle</string>
+      <string>Perfect Rulebook promotional cards</string>
+      <string>Perfectly Ultimate (DM4)</string>
+      <string>Performage Damage Juggler</string>
+      <string>Performage Plushfire</string>
+      <string>Performapal Miss Director</string>
+      <string>Performapal Monkeyboard</string>
+      <string>Performapal Skullcrobat Joker</string>
+      <string>Personal Spoofing</string>
+      <string>Petit Moth (DM4)</string>
+      <string>Phantom Skyblaster</string>
+      <string>Phantom Synchro</string>
+      <string>Phase</string>
+      <string>Phoenixian Cluster Amaryllis</string>
+      <string>Photon Token</string>
+      <string>Pick up a card</string>
+      <string>Piercing</string>
+      <string>Plant</string>
+      <string>Platinum Secret Rare</string>
+      <string>Plus Minus monster</string>
+      <string>Plus monster</string>
+      <string>Point-to-Point Transfer</string>
+      <string>Points to</string>
+      <string>Position</string>
+      <string>Possess</string>
+      <string>Pot of Avarice</string>
+      <string>Pot of Greed</string>
+      <string>Pot of Greed (DDS)</string>
+      <string>Pot of Greed (DM4)</string>
+      <string>Pot of Greed (TSC)</string>
+      <string>Power of Dark</string>
+      <string>Predaplant Ophrys Scorpio</string>
+      <string>Predaplant Triphyovertum</string>
+      <string>Predator Counter (card)</string>
+      <string>Premature Burial</string>
+      <string>Prescience</string>
+      <string>Primal Seed</string>
+      <string>Priority</string>
+      <string>Problem-Solving Card Text</string>
+      <string>Procedural Error - Major</string>
+      <string>Procedural Error - Minor</string>
+      <string>Procedural Error - Playing the Wrong Opponent</string>
+      <string>Procedural Error - Severe</string>
+      <string>Procedural Error - Slow Play</string>
+      <string>Procedural Error - Tardiness</string>
+      <string>Property</string>
+      <string>Psychic</string>
+      <string>Public knowledge</string>
+      <string>Pyro</string>
+      <string>QR code</string>
+      <string>Qliphort Scout</string>
+      <string>Queen Nereia the Silvercrown</string>
+      <string>Queen of Fate - Eternia</string>
+      <string>Quick Effect</string>
+      <string>Quick-Play Speed Spell Card</string>
+      <string>Quick-Play Spell Card</string>
+      <string>Quick-like Effect</string>
+      <string>R Arm of Forbidden</string>
+      <string>R Arm of Forbidden (DM4)</string>
+      <string>R Leg of Forbidden</string>
+      <string>R Leg of Forbidden (DM4)</string>
+      <string>Ra</string>
+      <string>Raigeki</string>
+      <string>Raigeki (DDS)</string>
+      <string>Raigeki (DM4)</string>
+      <string>Raigeki (TSC)</string>
+      <string>Raiza the Storm Monarch</string>
+      <string>Random</string>
+      <string>Rank</string>
+      <string>Rank condition</string>
+      <string>Rank-Down</string>
+      <string>Rank-Up</string>
+      <string>Rank-Up-Magic Argent Chaos Force</string>
+      <string>Rapid Trigger</string>
+      <string>Rare</string>
+      <string>Rarity</string>
+      <string>Reasoning</string>
+      <string>Red-Eyes</string>
+      <string>Red-Eyes Darkness Metal Dragon</string>
+      <string>Redox, Dragon Ruler of Boulders</string>
+      <string>Reduced functionality</string>
+      <string>Reflect Bounder</string>
+      <string>Reincarnation Link Summon</string>
+      <string>Reinforcement of the Army</string>
+      <string>Rekindling</string>
+      <string>Replay</string>
+      <string>Reptile</string>
+      <string>Reshef of Destruction Lists</string>
+      <string>Resolve</string>
+      <string>Respond</string>
+      <string>Return</string>
+      <string>Return from the Different Dimension</string>
+      <string>Reveal</string>
+      <string>Revival Swarm</string>
+      <string>Revive</string>
+      <string>Right Arm of the Forbidden One</string>
+      <string>Right Arm of the Forbidden One (TSC)</string>
+      <string>Right Leg of the Forbidden One</string>
+      <string>Right Leg of the Forbidden One (TSC)</string>
+      <string>Ring of Destruction</string>
+      <string>Ritual Beast</string>
+      <string>Ritual Beast Ulti-Cannahawk</string>
+      <string>Ritual Card</string>
+      <string>Ritual Monster</string>
+      <string>Ritual Speed Spell Card</string>
+      <string>Ritual Spell Card</string>
+      <string>Ritual Summon</string>
+      <string>Ritual Summoning condition</string>
+      <string>Rock</string>
+      <string>Royal Decree</string>
+      <string>Royal Flush</string>
+      <string>Royal Oppression</string>
+      <string>Royal Tribute</string>
+      <string>Rulebook</string>
+      <string>Rules</string>
+      <string>Rune</string>
+      <string>SPYRAL GEAR - Drone</string>
+      <string>SPYRAL Quik-Fix</string>
+      <string>SPYRAL Resort</string>
+      <string>Sabatiel - The Philosopher's Stone</string>
+      <string>Sakyo, Swordmaster of the Far East</string>
+      <string>Samsara Lotus</string>
+      <string>Sanctity of Dragon</string>
+      <string>Sangan</string>
+      <string>Sawnborrel Dragon</string>
+      <string>Scapegoat</string>
+      <string>Scripted Duel</string>
+      <string>Sea Beast</string>
+      <string>Sea Serpent</string>
+      <string>Secret Rare</string>
+      <string>Select</string>
+      <string>Self-Destruct Button</string>
+      <string>Semi-Limited</string>
+      <string>Semi-limited</string>
+      <string>Send</string>
+      <string>September 2004 Lists</string>
+      <string>September 2005 Lists</string>
+      <string>September 2006 Lists (OCG)</string>
+      <string>September 2006 Lists (TCG)</string>
+      <string>September 2007 Lists (OCG)</string>
+      <string>September 2007 Lists (TCG)</string>
+      <string>September 2007 Lists (WC08-VG)</string>
+      <string>September 2008 Lists (OCG)</string>
+      <string>September 2008 Lists (TCG)</string>
+      <string>September 2008 Lists (WC08-VG)</string>
+      <string>September 2009 Lists (OCG)</string>
+      <string>September 2009 Lists (TCG)</string>
+      <string>September 2010 Lists (Back From the Forbidden!)</string>
+      <string>September 2010 Lists (OCG)</string>
+      <string>September 2010 Lists (TCG)</string>
+      <string>September 2011 Lists (Back From the Forbidden!)</string>
+      <string>September 2011 Lists (OCG)</string>
+      <string>September 2011 Lists (TCG)</string>
+      <string>September 2012 Lists (OCG)</string>
+      <string>September 2012 Lists (TCG)</string>
+      <string>September 2013 Lists (OCG)</string>
+      <string>September 2013 Lists (TCG)</string>
+      <string>September 2016 Lists (Duel Generation)</string>
+      <string>September 2017 Lists</string>
+      <string>September 2018 Lists</string>
+      <string>Series</string>
+      <string>Set</string>
+      <string>Set Rotation</string>
+      <string>Seto (Dark Duel Stories)</string>
+      <string>Seto Kaiba</string>
+      <string>Sheep Token</string>
+      <string>Sheep Token (Blue)</string>
+      <string>Sheep Token (Orange)</string>
+      <string>Sheep Token (Pink)</string>
+      <string>Sheep Token (Yellow)</string>
+      <string>Shelga, the Tri-Warlord</string>
+      <string>Shinobird Token</string>
+      <string>Shonen Jump promotional cards</string>
+      <string>Short Print</string>
+      <string>Shortened and abbreviated card names and terms</string>
+      <string>Shuffle</string>
+      <string>Shurit, Strategist of the Nekroz</string>
+      <string>Side Deck</string>
+      <string>Side Deck basics</string>
+      <string>Sigthor</string>
+      <string>Simon (Tag Force)</string>
+      <string>Simon Muran (Dark Duel Stories)</string>
+      <string>Simplified Effect Text</string>
+      <string>Sinister Serpent</string>
+      <string>Sixth Sense</string>
+      <string>Skill</string>
+      <string>Skill Card</string>
+      <string>Skill Drain</string>
+      <string>Skuna, the Leonine Rakan</string>
+      <string>Sky Striker Ace - Kagari</string>
+      <string>Sky Striker Ace Token</string>
+      <string>Sky Striker Mecha - Hornet Drones</string>
+      <string>Sky Striker Mecha - Widow Anchor</string>
+      <string>Sky Striker Mobilize - Engage!</string>
+      <string>Slash Draw</string>
+      <string>Slifer</string>
+      <string>Slifer the Sky Dragon (DM4)</string>
+      <string>Slifer the Sky Dragon (original)</string>
+      <string>Slot Machine Power Unit</string>
+      <string>Smashing Ground</string>
+      <string>Smoke Mosquito</string>
+      <string>Snatch Steal</string>
+      <string>Snipe Hunter</string>
+      <string>Solemn Judgment</string>
+      <string>Solemn Strike</string>
+      <string>Solemn Warning</string>
+      <string>Soul Charge</string>
+      <string>Soul Drain</string>
+      <string>Souleating Oviraptor</string>
+      <string>Special Lists (WC08-VG)</string>
+      <string>Special Summon</string>
+      <string>Special Summon Monster</string>
+      <string>Special Summon-only monster</string>
+      <string>Special Summoning condition</string>
+      <string>Speed Duel (VRAINS)</string>
+      <string>Speed Spell Card</string>
+      <string>Speedroid</string>
+      <string>Speedroid Terrortop</string>
+      <string>Spell &amp; Trap Zone</string>
+      <string>Spell Card</string>
+      <string>Spell Counter (card)</string>
+      <string>Spell Monster</string>
+      <string>Spell Speed</string>
+      <string>Spell Speed 1</string>
+      <string>Spell Speed 2</string>
+      <string>Spell Speed 3</string>
+      <string>Spellbook of Judgment</string>
+      <string>Spellbook of Knowledge</string>
+      <string>Spellcaster</string>
+      <string>Spin</string>
+      <string>Spirit Reaper</string>
+      <string>Spirit monster</string>
+      <string>Stacking</string>
+      <string>Standby Phase</string>
+      <string>Staple</string>
+      <string>Stardust Divinity</string>
+      <string>Starliege Dragon Seyfert</string>
+      <string>Start Step</string>
+      <string>Statue Token</string>
+      <string>Status</string>
+      <string>Straight to the Grave</string>
+      <string>Strategy Card</string>
+      <string>Substitoad</string>
+      <string>Suicide</string>
+      <string>Summon</string>
+      <string>Summon Sorceress</string>
+      <string>Summon monster effect</string>
+      <string>Summoner Monk</string>
+      <string>Summoning Rules</string>
+      <string>Summoning Swarm</string>
+      <string>Summoning condition</string>
+      <string>Summoning mechanics</string>
+      <string>Summons &amp; Chains</string>
+      <string>Super Polymerization</string>
+      <string>Super Rare</string>
+      <string>Super Rejuvenation</string>
+      <string>Super War-Lion (Normal)</string>
+      <string>Support</string>
+      <string>Supreme King Dragon Darkwurm</string>
+      <string>Supreme King Dragon Starving Venom</string>
+      <string>Surrender</string>
+      <string>Swords of Revealin</string>
+      <string>Swords of Revealin (DM4)</string>
+      <string>Swords of Revealing Light</string>
+      <string>Symbol of Heritage</string>
+      <string>Synchro Cat</string>
+      <string>Synchro Material</string>
+      <string>Synchro Monster</string>
+      <string>Synchro Substitute Monster</string>
+      <string>Synchro Summon</string>
+      <string>Synchron Token</string>
+      <string>Synthetic Seraphim Token</string>
+      <string>Syrus Truesdale (Tag Force)</string>
+      <string>T.G. Gear Zombie</string>
+      <string>T.G. Hyper Librarian</string>
+      <string>TCG-only</string>
+      <string>Target</string>
+      <string>Team Dueling Rules</string>
+      <string>Teleport Dark Armed</string>
+      <string>Tellarknight Ptolemaeus</string>
+      <string>Tempest, Dragon Ruler of Storms</string>
+      <string>Temple of the Kings</string>
+      <string>Terraforming</string>
+      <string>Terrain</string>
+      <string>Testament of the Arcane Lords</string>
+      <string>That Grass Looks Greener</string>
+      <string>The Forceful Sentry</string>
+      <string>The Phantom Knights' Rank-Up-Magic Launch</string>
+      <string>The Seal of Orichalcos (UDE promo)</string>
+      <string>The Transmigration Prophecy</string>
+      <string>The Twin Kings, Founders of the Empire</string>
+      <string>The Tyrant Neptune</string>
+      <string>The Winged Dragon of Ra (Battle Mode)</string>
+      <string>The Winged Dragon of Ra (DM4)</string>
+      <string>The Winged Dragon of Ra (Phoenix Mode)</string>
+      <string>The Winged Dragon of Ra (original)</string>
+      <string>Thousand-Eyes Restrict</string>
+      <string>Thunder</string>
+      <string>Thunder (Alignment)</string>
+      <string>Tidal, Dragon Ruler of Waterfalls</string>
+      <string>Tiger Token</string>
+      <string>Time Seal</string>
+      <string>Timelord Progenitor Vulgate</string>
+      <string>Tip Card</string>
+      <string>Toadally Awesome</string>
+      <string>Token</string>
+      <string>Token (15th Anniversary)</string>
+      <string>Token (20th Anniversary)</string>
+      <string>Token (Astral and Number 39: Utopia)</string>
+      <string>Token (Declan and D/D/D Doom King Armageddon)</string>
+      <string>Token (Jack &amp; Yuya)</string>
+      <string>Token (Jack and Red Dragon Archfiend)</string>
+      <string>Token (Jaden - OCG 20th Anniversary)</string>
+      <string>Token (Jaden and Elemental HERO Neos - 20th Anniversary)</string>
+      <string>Token (Jaden and Winged Kuriboh)</string>
+      <string>Token (Jesse and Rainbow Dragon)</string>
+      <string>Token (Joey and Red-Eyes B. Dragon)</string>
+      <string>Token (Kaiba &amp; Yugi - The Dark Side of Dimensions)</string>
+      <string>Token (Kaiba and Blue-Eyes White Dragon)</string>
+      <string>Token (Kite &amp; Mizar)</string>
+      <string>Token (Kite)</string>
+      <string>Token (Numbers Club)</string>
+      <string>Token (Playmaker and Cyberse Clock Dragon)</string>
+      <string>Token (Playmaker and Cyberse Quantum Dragon)</string>
+      <string>Token (Playmaker and Decode Talker - 20th Anniversary)</string>
+      <string>Token (Reginald)</string>
+      <string>Token (Rio)</string>
+      <string>Token (Shay)</string>
+      <string>Token (Soulburner and Salamangreat Heatleo)</string>
+      <string>Token (Stardust Spark Dragon)</string>
+      <string>Token (Tori)</string>
+      <string>Token (World Championship 2014)</string>
+      <string>Token (World Championship 2019)</string>
+      <string>Token (World Duel Carnival)</string>
+      <string>Token (Yami Yugi - OCG 20th Anniversary)</string>
+      <string>Token (Yami Yugi and Dark Magician - 20th Anniversary)</string>
+      <string>Token (Yami Yugi and Dark Magician)</string>
+      <string>Token (Yugi Muto and Yami Yugi)</string>
+      <string>Token (Yugi and Gandora the Dragon of Destruction)</string>
+      <string>Token (Yugi and Kuriboh)</string>
+      <string>Token (Yugi)</string>
+      <string>Token (Yugo)</string>
+      <string>Token (Yuma - OCG 20th Anniversary)</string>
+      <string>Token (Yuma - V Jump)</string>
+      <string>Token (Yuma and Number 39: Utopia - 20th Anniversary)</string>
+      <string>Token (Yuma)</string>
+      <string>Token (Yuri)</string>
+      <string>Token (Yusaku - OCG 20th Anniversary)</string>
+      <string>Token (Yusei - OCG 20th Anniversary)</string>
+      <string>Token (Yusei - V Jump)</string>
+      <string>Token (Yusei and Stardust Dragon - 20th Anniversary)</string>
+      <string>Token (Yusei and Stardust Dragon)</string>
+      <string>Token (Yuto)</string>
+      <string>Token (Yuya - OCG 20th Anniversary)</string>
+      <string>Token (Yuya and Odd-Eyes Pendulum Dragon - 20th Anniversary)</string>
+      <string>Token (Yuya and Odd-Eyes Pendulum Dragon)</string>
+      <string>Token (ZEXAL II)</string>
+      <string>Token (ZEXAL)</string>
+      <string>Token Monster</string>
+      <string>Tomb of the Pharaoh</string>
+      <string>Tomohiro the Mountain Warrior</string>
+      <string>Toon Cannon Soldier</string>
+      <string>Toon monster</string>
+      <string>Top-Decking</string>
+      <string>Topologic Gumblar Dragon</string>
+      <string>Topologic Zerovoros</string>
+      <string>Torment Token</string>
+      <string>Torrential Tribute</string>
+      <string>Tour Guide From the Underworld</string>
+      <string>Tour Guide From the Underworld (Duel Arena)</string>
+      <string>Tournament Guidelines FAQ</string>
+      <string>Tournament Organizer</string>
+      <string>Traditional Format</string>
+      <string>Transcendent Pendulum Summon</string>
+      <string>Transcender</string>
+      <string>Transfer</string>
+      <string>Transformation Summon</string>
+      <string>Trap Card</string>
+      <string>Trap Dustshoot</string>
+      <string>Trap Field Monster</string>
+      <string>Trap Monster</string>
+      <string>Trap Spell Card</string>
+      <string>Treat Ltd as Forb Lists (WC08-VG)</string>
+      <string>Tribal Synergy</string>
+      <string>Tribe-Infecting Virus</string>
+      <string>Tribute</string>
+      <string>Tribute Monsters</string>
+      <string>Tribute Set</string>
+      <string>Tribute Summon</string>
+      <string>Trickstar Candina</string>
+      <string>Trickstar Reincarnation</string>
+      <string>Trickstar Token</string>
+      <string>Trigger Effect</string>
+      <string>Trishula, Dragon of the Ice Barrier</string>
+      <string>Trishula, the Dragon of Icy Imprisonment</string>
+      <string>True Exodia</string>
+      <string>True King Lithosagym, the Disaster</string>
+      <string>True King's Return</string>
+      <string>Tsukuyomi</string>
+      <string>Tuner Synchro Monster</string>
+      <string>Tuner monster</string>
+      <string>Turbo Duel</string>
+      <string>Turn</string>
+      <string>Turn count</string>
+      <string>Turn player</string>
+      <string>Twin-Headed Behemoth</string>
+      <string>Type</string>
+      <string>Tyr, the Vanquishing Warlord</string>
+      <string>UMD Recognition</string>
+      <string>UMD Recognition Cards (GX04)</string>
+      <string>Ulevo</string>
+      <string>Ultimate Offering</string>
+      <string>Ultimate Rare</string>
+      <string>Ultra Rare</string>
+      <string>Unacceptable Result</string>
+      <string>Unaffected</string>
+      <string>Unclassified Effect</string>
+      <string>Unconfirmed Effect</string>
+      <string>Unequip</string>
+      <string>Union monster</string>
+      <string>United We Stand</string>
+      <string>Unity Summon</string>
+      <string>Unlimited</string>
+      <string>Unlimited Edition</string>
+      <string>Unsporting Conduct</string>
+      <string>Unsporting Conduct - Cheating</string>
+      <string>Unsporting Conduct - Major</string>
+      <string>Unsporting Conduct - Minor</string>
+      <string>Unsporting Conduct - Severe</string>
+      <string>Upstart Goblin</string>
+      <string>Valley Token</string>
+      <string>Vanity's Emptiness</string>
+      <string>Victory Dragon</string>
+      <string>Victory condition</string>
+      <string>Virus</string>
+      <string>Virus Card</string>
+      <string>Vision Fusion</string>
+      <string>Vision HERO Faris</string>
+      <string>Vision HERO Gravito</string>
+      <string>Vision HERO Increase</string>
+      <string>Vision HERO Minimum Ray</string>
+      <string>Vision HERO Multiply Guy</string>
+      <string>Vision HERO Poisoner</string>
+      <string>Vision Release</string>
+      <string>Vylon</string>
+      <string>WATER</string>
+      <string>WIND</string>
+      <string>Wall of Revealing Light</string>
+      <string>Warning</string>
+      <string>Warrior</string>
+      <string>Water (Alignment)</string>
+      <string>Water Deck</string>
+      <string>Wedge Counter (card)</string>
+      <string>Weekly Shonen Jump promotional card polls</string>
+      <string>What are the rules on Search Effects?</string>
+      <string>What does Constructed Deck mean?</string>
+      <string>What is Sealed Deck Format?</string>
+      <string>White Magic</string>
+      <string>White Magic (Alignment)</string>
+      <string>Wind (Alignment)</string>
+      <string>Wind-Up</string>
+      <string>Wind-Up Carrier Zenmaity</string>
+      <string>Wind-Up Hunter</string>
+      <string>Winged Beast</string>
+      <string>Winning Formula</string>
+      <string>Witch of the Black Forest</string>
+      <string>Woody</string>
+      <string>World Championship</string>
+      <string>World Championship 2007: Game Glitches</string>
+      <string>World Championship 2008 Lists</string>
+      <string>World Championship 2012 Lists</string>
+      <string>World Championship 2014 Lists</string>
+      <string>World Championship 2015 Lists</string>
+      <string>World Championship 2016 Lists</string>
+      <string>World Championship 2017 Lists</string>
+      <string>World Championship Lists (WC08-VG)</string>
+      <string>Wyrm</string>
+      <string>Xtra HERO</string>
+      <string>Xyz Evolution</string>
+      <string>Xyz Material</string>
+      <string>Xyz Monster</string>
+      <string>Xyz Summon</string>
+      <string>YCS Providence 2012 Special: Yusei vs. Akiza</string>
+      <string>Yami Bakura's Decks</string>
+      <string>Yami Marik (Duel Arena)</string>
+      <string>Yami Yugi (Dark Duel Stories)</string>
+      <string>Yasushi the Skull Knight</string>
+      <string>Yata-Garasu</string>
+      <string>Yata-Garasu Lockdown</string>
+      <string>Yokai</string>
+      <string>Yu-Gi-Oh! 5D's Stardust Accelerator: Downloads</string>
+      <string>Yu-Gi-Oh! 5D's World Championship 2010: Reverse of Arcadia: Downloads</string>
+      <string>Yu-Gi-Oh! Dark Duel Stories</string>
+      <string>Yu-Gi-Oh! Duel Generation: Forbidden/Limited Lists</string>
+      <string>Yu-Gi-Oh! Duel Monsters (video game)</string>
+      <string>Yu-Gi-Oh! Duel Monsters 4: Battle of Great Duelist</string>
+      <string>Yu-Gi-Oh! Duel Monsters 5 Expert 1</string>
+      <string>Yu-Gi-Oh! Duel Monsters 6 Expert 2</string>
+      <string>Yu-Gi-Oh! GX - Episode 019</string>
+      <string>Yu-Gi-Oh! GX Duel Academy/Banned List</string>
+      <string>Yu-Gi-Oh! GX Spirit Caller/Forbidden Restricted Lists</string>
+      <string>Yu-Gi-Oh! GX Tag Force 2: Character Deck Recipes</string>
+      <string>Yu-Gi-Oh! GX Tag Force: Bonus/Challenges</string>
+      <string>Yu-Gi-Oh! Nightmare Troubadour: Forbidden/Limited Lists</string>
+      <string>Yu-Gi-Oh! Nightmare Troubadour: Intermediate Puzzle 05</string>
+      <string>Yu-Gi-Oh! Official Card Game</string>
+      <string>Yu-Gi-Oh! Over the Nexus Downloads</string>
+      <string>Yu-Gi-Oh! Power of Chaos</string>
+      <string>Yu-Gi-Oh! Power of Chaos: Joey the Passion</string>
+      <string>Yu-Gi-Oh! Power of Chaos: Yugi the Destiny</string>
+      <string>Yu-Gi-Oh! The Duelists of the Roses Gameplay</string>
+      <string>Yu-Gi-Oh! The Eternal Duelist Soul</string>
+      <string>Yu-Gi-Oh! Ultimate Masters: World Championship 2006: Theme Duels</string>
+      <string>Yu-Gi-Oh! Ultimate Masters: World Championship Tournament 2006</string>
+      <string>Yu-Gi-Oh! World Championship 2006: March 2004 Lists</string>
+      <string>Yu-Gi-Oh! World Championship 2006: March 2005 Lists</string>
+      <string>Yu-Gi-Oh! World Championship 2006: March 2006 Lists</string>
+      <string>Yu-Gi-Oh! World Championship 2006: March 2007 Lists</string>
+      <string>Yu-Gi-Oh! World Championship 2006: September 2003 Lists</string>
+      <string>Yu-Gi-Oh! World Championship 2006: September 2004 Lists</string>
+      <string>Yu-Gi-Oh! World Championship 2006: September 2005 Lists</string>
+      <string>Yu-Gi-Oh! World Championship 2006: September 2006 Lists</string>
+      <string>Yu-Gi-Oh! World Championship 2006: September 2007 Lists</string>
+      <string>Yu-Gi-Oh! World Championship 2008</string>
+      <string>Yu-Gi-Oh! World Championship Tournament 2004 Opponents</string>
+      <string>Yu-Gi-Oh! Worldwide Edition: Stairway to the Destined Duel</string>
+      <string>Yu-Gi-Oh! slang</string>
+      <string>Yugi Mutou and Brainwashed Jonouchi's Duel (manga)</string>
+      <string>Yugi's Collector Box</string>
+      <string>Yugipedia</string>
+      <string>Z-ONE/Monster A</string>
+      <string>Z-ONE/Monster B</string>
+      <string>Z-ONE/Monster C</string>
+      <string>Z-ONE/Monster D</string>
+      <string>Z-ONE/Monster E</string>
+      <string>Z-ONE/Trap A</string>
+      <string>Z-ONE/Trap B</string>
+      <string>Z-ONE/Trap C</string>
+      <string>Zane Truesdale (Tag Force)</string>
+      <string>Zera the Mant (Normal)</string>
+      <string>Zero Turn Kill</string>
+      <string>Zombie</string>
+      <string>Zone</string>
+      <string>Zoodiac Barrage</string>
+      <string>Zoodiac Broadbull</string>
+      <string>Zoodiac Drident</string>
+      <string>Zoodiac Ratpier</string>
+      <string>∞</string>
+    </remove>
+  </Special>
+  <Tool>
+    <ListComparerUseCurrentArticleList>0</ListComparerUseCurrentArticleList>
+    <ListSplitterUseCurrentArticleList>0</ListSplitterUseCurrentArticleList>
+    <DatabaseScannerUseCurrentArticleList>0</DatabaseScannerUseCurrentArticleList>
+  </Tool>
+  <Plugin />
+</AutoWikiBrowserPreferences>
