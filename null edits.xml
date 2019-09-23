@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<AutoWikiBrowserPreferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:space="preserve" Version="5.10.1.0">
+<AutoWikiBrowserPreferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:space="preserve" Version="6.1.0.1">
   <Project>custom</Project>
   <LanguageCode>en</LanguageCode>
   <CustomProject>yugipedia.com/</CustomProject>
@@ -208,7 +208,7 @@
     <filterTitlesThatDontContain>false</filterTitlesThatDontContain>
     <filterTitlesThatDontContainText />
     <areRegex>false</areRegex>
-    <opType>-1</opType>
+    <opType>0</opType>
     <remove />
   </Special>
   <Tool>
