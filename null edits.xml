@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AutoWikiBrowserPreferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:space="preserve" Version="6.1.0.1">
-  <Project>custom</Project>
+  <Project>wikipedia</Project>
   <LanguageCode>en</LanguageCode>
-  <CustomProject>yugipedia.com/</CustomProject>
-  <Protocol>https://</Protocol>
+  <CustomProject />
+  <Protocol>http://</Protocol>
   <LoginDomain />
   <List>
-    <ListSource>Template:CardTable2</ListSource>
-    <SelectedProvider>CategoryNoLimitsForAdminAndBotsPlugin</SelectedProvider>
+    <ListSource />
+    <SelectedProvider>CategoryListProvider</SelectedProvider>
     <ArticleList />
   </List>
   <FindAndReplace>
