@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <AutoWikiBrowserPreferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:space="preserve" Version="6.1.0.1">
   <Project>custom</Project>
   <LanguageCode>en</LanguageCode>
@@ -6,8 +6,8 @@
   <Protocol>https://</Protocol>
   <LoginDomain />
   <List>
-    <ListSource>Cards using (((passcode)))</ListSource>
-    <SelectedProvider>CategoryNoLimitsForAdminAndBotsPlugin</SelectedProvider>
+    <ListSource />
+    <SelectedProvider>CategoryListProvider</SelectedProvider>
     <ArticleList />
   </List>
   <FindAndReplace>
@@ -217,11 +217,11 @@
         <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>^\|([^=]*)=([^|\n{]*)\|</Find>
-        <Replace>|$1=$2\n|</Replace>
+        <Find>^\|([^=]*)=([^|\n{]*)\|([^=\]]*)=</Find>
+        <Replace>|$1=$2\n|$3=</Replace>
         <Comment>move multiple named parameters on a single line in multiline templates to new lines</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>IgnoreCase Multiline</RegularExpressionOptions>
@@ -331,6 +331,26 @@
         <Replace>'</Replace>
         <Comment>fancy single-quote cleanup</Comment>
         <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\\uFF02</Find>
+        <Replace>"</Replace>
+        <Comment>fullwidth double-quote cleanup</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\\uFF07</Find>
+        <Replace>'</Replace>
+        <Comment>fullwidth single-quote cleanup</Comment>
+        <IsRegex>false</IsRegex>
         <Enabled>true</Enabled>
         <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
@@ -857,7 +877,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\[\[Wik(i(?:a|books|data|media|news|pedia|quote|source|species|versity|voyage)|t(?:ionary)?):</Find>
+        <Find>\[\[Wik(i(?:a|books|data|[mp]edia|news|quote|source|species|versity|voyage)|t(?:ionary)?):</Find>
         <Replace>[[wik$1:</Replace>
         <Comment>re-lowercase interwiki links: "wikia", "wiki*", "wikt(ionary)"</Comment>
         <IsRegex>true</IsRegex>
@@ -1027,6 +1047,26 @@
         <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
       <Replacement>
+        <Find>\[\[Battle\ Position\|</Find>
+        <Replace>[[Battle position|</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Battle position\|(B)attle Position]]</Find>
+        <Replace>[[$1attle Position]]</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
         <Find>\b(C)ontrol(e[dr]|ing)\b</Find>
         <Replace>$1ontroll$2</Replace>
         <Comment />
@@ -1149,6 +1189,16 @@
       <Replacement>
         <Find>\[\[(D)estroy(s|ed)]]</Find>
         <Replace>[[$1estroy]]$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[(?:Direct Attacks?|Attack directly|Ataque directo|Directly)\|</Find>
+        <Replace>[[Direct attack|</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
@@ -1429,6 +1479,16 @@
       <Replacement>
         <Find>\[\[(?:Mo(nst(er(?: Card)?s?|r(?:e|uo))|stri)|Creature)\|</Find>
         <Replace>[[Monster Card|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\[Monster Card\|(M)onster(s)?]]</Find>
+        <Replace>[[$1onster]]$2</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
@@ -1767,6 +1827,16 @@
         <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
       <Replacement>
+        <Find>\[\[(dark)]](ness)?</Find>
+        <Replace>[[DARK|$1$2]]</Replace>
+        <Comment>[[dark]](ness)? --&gt; [[DARK|dark(ness)?]]</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
         <Find>\[\[([^|\]]+)(\|[^\]]+)?]](.+?)\[\[(\1)]]</Find>
         <Replace>[[$1$2]]$3$4</Replace>
         <Comment>delink duplicates of the same link in the same line: duplicate is unpiped - round 1</Comment>
@@ -1867,21 +1937,31 @@
         <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\| (?:dm\d|[de]ds|tsc|sdd|[dr]od|gx0?5|pc[jky])_?(?:number\d?|(?:nam|lor)e|d[cp]|align(?:ment)?|atk|def|status|card) +=.*?\n</Find>
+        <Find>\| (?:dm\d|[de]ds|tsc|sdd|[dr]od|gx0?5|pc[jky]|wc0?[456])_?(?:number\d?|(?:nam|lor)e|d[cp]|align(?:ment)?|atk|def|status|card) +=.*?\n</Find>
         <Replace />
         <Comment>rm misc vg params</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\| (?:dm\d|[de]ds|tsc|sdd|[dr]od|gx0?5|pc[jky])_?sets? +=.*?\n(\||\}\})</Find>
+        <Find>\| (?:dm\d|[de]ds|tsc|sdd|[dr]od|gx0?5|pc[jky]|wc0?[456])_?sets? +=.*?\n(\||\}\})</Find>
         <Replace>$1</Replace>
         <Comment>rm vg sets params</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase Singleline</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\| (?:dm\d|[de]ds|tsc|sdd|[dr]od|gx0?5|pc[jky]|wc0?[456])_?sets? +=.*?\n(\||\}\})</Find>
+        <Replace>$1</Replace>
+        <Comment>rm vg sets params (2)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>IgnoreCase Singleline</RegularExpressionOptions>
@@ -3272,7 +3352,7 @@
       <SavePeriod>30</SavePeriod>
       <SaveFile />
     </AutoSaveEdit>
-    <SelectedSummary>passcode → password</SelectedSummary>
+    <SelectedSummary>rm World Championship 2006 parameters</SelectedSummary>
     <Summaries>
       <string>clean up</string>
       <string>re-categorisation per [[WP:CFD|CFD]]</string>
@@ -3332,6 +3412,8 @@
       <string>rm parameters for various video games that have been split out</string>
       <string>update {{Unofficial name}}/{{Unofficial lore}}</string>
       <string>passcode → password</string>
+      <string>rm World Championship 2005 parameters</string>
+      <string>rm World Championship 2006 parameters</string>
     </Summaries>
     <PasteMore>
       <string />
@@ -3436,8 +3518,8 @@
     <SkipDoesNotRegex>false</SkipDoesNotRegex>
     <SkipDoesNotCaseSensitive>false</SkipDoesNotCaseSensitive>
     <SkipDoesNotAfterProcessing>false</SkipDoesNotAfterProcessing>
-    <SkipNoFindAndReplace>false</SkipNoFindAndReplace>
-    <SkipMinorFindAndReplace>false</SkipMinorFindAndReplace>
+    <SkipNoFindAndReplace>true</SkipNoFindAndReplace>
+    <SkipMinorFindAndReplace>true</SkipMinorFindAndReplace>
     <SkipNoRegexTypoFix>false</SkipNoRegexTypoFix>
     <SkipNoDisambiguation>false</SkipNoDisambiguation>
     <SkipNoLinksOnPage>false</SkipNoLinksOnPage>
