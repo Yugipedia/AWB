@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <AutoWikiBrowserPreferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:space="preserve" Version="6.1.0.1">
   <Project>wikipedia</Project>
   <LanguageCode>en</LanguageCode>
@@ -14,7 +14,7 @@
     <Enabled>false</Enabled>
     <IgnoreSomeText>false</IgnoreSomeText>
     <IgnoreMoreText>false</IgnoreMoreText>
-    <AppendSummary>true</AppendSummary>
+    <AppendSummary>false</AppendSummary>
     <Replacements />
     <AdvancedReps />
     <SubstTemplates />
@@ -83,7 +83,7 @@
     <ToolBarEnabled>false</ToolBarEnabled>
     <BypassRedirect>true</BypassRedirect>
     <AutoSaveSettings>false</AutoSaveSettings>
-    <noSectionEditSummary>false</noSectionEditSummary>
+    <noSectionEditSummary>true</noSectionEditSummary>
     <restrictDefaultsortAddition>true</restrictDefaultsortAddition>
     <restrictOrphanTagging>true</restrictOrphanTagging>
     <noMOSComplianceFixes>false</noMOSComplianceFixes>
@@ -93,7 +93,7 @@
     <NoAutoChanges>true</NoAutoChanges>
     <OnLoadAction>0</OnLoadAction>
     <DiffInBotMode>false</DiffInBotMode>
-    <Minor>true</Minor>
+    <Minor>false</Minor>
     <AddToWatchlist>2</AddToWatchlist>
     <TimerEnabled>true</TimerEnabled>
     <SortListAlphabetically>true</SortListAlphabetically>
